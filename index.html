@@ -65,7 +65,7 @@
 	            <div class="container">
 	<div class="row wrapper border-bottom white-bg page-heading">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<h2>Welcome to Weaver</h2><hr  /><p>The following is a rough documentation intended to simply demonstrate and enumerate the facilities provided by weaver</p>
+			<h2>Welcome to Weaver</h2><hr  /><p>The following is a rough documentation intended to simply demonstrate and enumerate the facilities provided by weaver</p><p>This documentation page is written in Weaver too! See</p><a href="https://github.com/davidsiaw/weaver-doc-source" target="_blank"><span>https://github.com/davidsiaw/weaver-doc-source <i class="fa fa-external-link"></i></span></a>
 		</div>
 
 	</div>
@@ -85,8 +85,11 @@
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Creating a new weaver site</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><pre>weaver create my_site</pre><p>This will create a folder that looks like this:</p><pre>my_site/
 ├── Gemfile
+├── Gemfile.lock
+├── images
 └── source
     └── index.weave
+
 </pre><p>Weave files are where you describe websites. To preview your site, simply go</p><pre>cd my_site
 bundle install
 bundle exec weaver
@@ -96,11 +99,17 @@ bundle exec weaver
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Building your website</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>To build your website simply use the following command:</p><pre>bundle exec weaver build</pre><p>Your website will be generated and placed in the <code>build</code> directory</p><p>If your website is not a root website (it is in a subdirectory), then you can add the -r parameter, as we do for this documentation site:</p><pre>bundle exec weaver build -r http://davidsiaw.github.io/weaver-docs/</pre><p>This sets the root for images and other things such as links</p></div></div>
+		</div>
+
+	</div>
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Simple example Weave file</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>The most basic file takes one argument: the title, and a block that contains the contents of the page</p><textarea id="code0">center_page "Hello world" do
 	ibox do
 		h2 "Hello world!"
 	end
-end</textarea><a href="examples/hello/" target="_blank"><span>See it in action <i class="fa fa-external-link"></i></span></a></div></div>
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/hello/">See it in action</a></div></div>
 		</div>
 
 	</div>
@@ -113,7 +122,7 @@ end</textarea><a href="examples/hello/" target="_blank"><span>See it in action <
 			p "#{i}"
 		end
 	end
-end</textarea><a href="examples/loop/" target="_blank"><span>See it in action <i class="fa fa-external-link"></i></span></a></div></div>
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/loop/">See it in action</a></div></div>
 		</div>
 
 	</div>
@@ -247,7 +256,16 @@ text "User"</textarea>
 		</div>
 
 	</div>
-</div><div class="ibox-footer"><p>Images are placed in the images folder, where they will be found</p></div></div>
+</div><div class="ibox-footer"><p>Images are placed in the images folder, where they will be found</p><pre>my_site/
+├── Gemfile
+├── Gemfile.lock
+├── images   <-------------- here
+│   ├── kagamin-under.png
+│   └── kagamin.png
+└── source
+    └── index.weave
+
+</pre></div></div>
 		</div>
 
 	</div>
@@ -294,7 +312,35 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are different page templates to choose from</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><textarea id="code12">topnav_page "Topnav Page Template" do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are different page templates to choose from</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>All page templates are responsive</p><h3>Structureless pages</h3><p>Structureless pages allow you to directly write content</p><textarea id="code12">empty_page "Empty Page Template" do
+	p "In this template, there no navigation bar and no structure. This is the most basic kind of page"
+
+	ibox do
+		p "Stuff in an ibox to show the width of the page"
+	end
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/empty_page/">See it in action</a><hr  /><textarea id="code13">center_page "Center Page Template" do
+	p "In this template, there no navigation bar, and everything is centered. Great for login/lock screens"
+
+	ibox do
+		p "Stuff in an ibox to show the width of the page"
+	end
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/center_page/">See it in action</a><hr  /><textarea id="code14">raw_page do
+	text "This is a raw page with absolutely no skeleton. Great for static data"
+
+	p "It is still possible to insert tags, but most things won't work"
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/raw_page/">See it in action</a><hr  /><h3>Structured pages</h3><p>Structured pages require all content to be placed in headers/rows and columns</p><textarea id="code15">nonnav_page "Nonnav Page Template" do
+	header do
+		col 12 do
+			h2 "No navigation bar"
+		end
+	end
+
+	row do
+		col 12 do
+			p "This template is like the empty template, except it is structured"
+		end
+	end
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/nonnav_page/">See it in action</a><hr  /><textarea id="code16">topnav_page "Topnav Page Template" do
 	header do
 		col 12 do
 			h2 "Top Navigation Bar"
@@ -306,7 +352,7 @@ end</textarea>
 			p "In this template, there is a navigation bar on the top."
 		end
 	end
-end</textarea><a href="examples/topnav_page/" target="_blank"><span>See it in action <i class="fa fa-external-link"></i></span></a><hr  /><textarea id="code13">sidenav_page "Sidenav Page Template" do
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/topnav_page/">See it in action</a><hr  /><textarea id="code17">sidenav_page "Sidenav Page Template" do
 	header do
 		col 12 do
 			h2 "Side Navigation Bar"
@@ -318,15 +364,13 @@ end</textarea><a href="examples/topnav_page/" target="_blank"><span>See it in ac
 			p "In this template, there is a navigation bar on the side."
 		end
 	end
-end</textarea><a href="examples/sidenav_page/" target="_blank"><span>See it in action <i class="fa fa-external-link"></i></span></a><hr  /><textarea id="code14">center_page "Center Page Template" do
-	p "In this template, there no navigation bar, and everything is centered."
-end</textarea><a href="examples/center_page/" target="_blank"><span>See it in action <i class="fa fa-external-link"></i></span></a></div></div>
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/sidenav_page/">See it in action</a></div></div>
 		</div>
 
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are different preset partition schemes too</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><textarea id="code15">topnav_page "Partitions" do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are different preset partition schemes too</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><textarea id="code18">topnav_page "Partitions" do
 
 	header do
 		col 12 do
@@ -362,7 +406,7 @@ end</textarea><a href="examples/center_page/" target="_blank"><span>See it in ac
 		quarter { ibox { p "Quarter" } }
 		quarter { ibox { p "Quarter" } }
 	end
-end</textarea><a href="examples/partition_schemes/" target="_blank"><span>See it in action <i class="fa fa-external-link"></i></span></a></div></div>
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/partition_schemes/">See it in action</a></div></div>
 		</div>
 
 	</div>
@@ -370,7 +414,7 @@ end</textarea><a href="examples/partition_schemes/" target="_blank"><span>See it
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are buttons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code16">button nil, "Normal Button"; br
+			<textarea id="code19">button nil, "Normal Button"; br
 block_button nil, "Block Button"; br
 outline_button nil, "Outline Button"; br
 big_button nil, "Big Button"; br
@@ -395,7 +439,7 @@ circle_button :user, ""; br
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are various types of panels available</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code17">ibox do
+			<textarea id="code20">ibox do
 	type :panel
 	title "Panel"
 	p "Some content"
@@ -450,7 +494,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Jumbotron</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code18">jumbotron do
+			<textarea id="code21">jumbotron do
 	h2 "Jumbotron"
 end</textarea>
 		</div>
@@ -467,7 +511,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Widgets</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code19">widget color: :"gray" do
+			<textarea id="code22">widget color: :"gray" do
 	p "gray"
 end
 widget color: :"gray" do	
@@ -507,7 +551,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is easy to make tabs</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code20">tabs do
+			<textarea id="code23">tabs do
 	tab "Dog" do
 		p "Woof" 
 	end
@@ -532,7 +576,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are two other possible orientations</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>There is <code>:left</code> and <code>:right</code></p>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code21">tabs do
+			<textarea id="code24">tabs do
 	orientation :left
 	tab "Dog" do
 		p "Woof" 
@@ -558,7 +602,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is also possible to use icons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code22">tabs do
+			<textarea id="code25">tabs do
 	tab :automobile do
 		p "Car" 
 	end
@@ -583,7 +627,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is also possible to use an accordion</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code23">accordion do
+			<textarea id="code26">accordion do
 	tab "Dog" do
 		p "Woof" 
 	end
@@ -608,7 +652,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Tables can also be made the standard way</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code24">table do
+			<textarea id="code27">table do
 	thead do
 		th { text "Name" }
 		th { text "Class" }
@@ -628,7 +672,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table" id="table0"><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
+			<table class="table" id="table0" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
 	</div>
@@ -640,7 +684,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Bordered style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can mix and match styles</p>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code25">table bordered: true do
+			<textarea id="code28">table bordered: true do
 	thead do
 		th { text "Name" }
 		th { text "Class" }
@@ -660,7 +704,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-bordered" id="table1"><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
+			<table class="table table-bordered" id="table1" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
 	</div>
@@ -672,7 +716,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Hover style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code26">table hover: true do
+			<textarea id="code29">table hover: true do
 	thead do
 		th { text "Name" }
 		th { text "Class" }
@@ -692,7 +736,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-hover" id="table2"><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
+			<table class="table table-hover" id="table2" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
 	</div>
@@ -704,7 +748,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Striped style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code27">table striped: true do
+			<textarea id="code30">table striped: true do
 	thead do
 		th { text "Name" }
 		th { text "Class" }
@@ -724,7 +768,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-striped" id="table3"><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
+			<table class="table table-striped" id="table3" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
 	</div>
@@ -736,7 +780,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Data Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Data table JQuery plugin</p>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code28">table system: :data_table do
+			<textarea id="code31">table system: :data_table do
 	thead do
 		th { text "Name" }
 		th { text "Class" }
@@ -756,7 +800,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table" id="table4"><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
+			<table class="table" id="table4" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
 	</div>
@@ -768,7 +812,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Foo Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Foo Table plugin</p>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code29">table system: :foo_table do
+			<textarea id="code32">table system: :foo_table do
 	thead do
 		th { text "Name" }
 		th { text "Class" }
@@ -800,7 +844,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table toggle-arrow-tiny" id="table5"><thead><th>Name</th><th>Class</th><th data-hide="all">Info</th><th data-hide="all">Power</th></thead><tr><td>Haruhi</td><td>2-B</td><td>Uninterested in humans</td><td>Reality change</td></tr><tr><td>Kyon</td><td>2-B</td><td>Is the real God</td><td>Control over Haruhi</td></tr><tr><td>Mikuru</td><td>3-A</td><td>Classified information</td><td>Classified information</td></tr></table>
+			<table class="table toggle-arrow-tiny" id="table5" style=""><thead><th>Name</th><th>Class</th><th data-hide="all">Info</th><th data-hide="all">Power</th></thead><tr><td>Haruhi</td><td>2-B</td><td>Uninterested in humans</td><td>Reality change</td></tr><tr><td>Kyon</td><td>2-B</td><td>Is the real God</td><td>Control over Haruhi</td></tr><tr><td>Mikuru</td><td>3-A</td><td>Classified information</td><td>Classified information</td></tr></table>
 		</div>
 
 	</div>
@@ -812,7 +856,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can make also tables easily from an array of Hashes</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code30">table_from_hashes [
+			<textarea id="code33">table_from_hashes [
 	{name: "Haruhi", age: 17},
 	{name: "Mikuru", age: 18},
 	{name: "Kyon", age: 17},
@@ -822,7 +866,7 @@ end</textarea>
 ]</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table" id="table6"><thead><th>name</th><th>age</th></thead><tr><td>Haruhi</td><td>17</td></tr><tr><td>Mikuru</td><td>18</td></tr><tr><td>Kyon</td><td>17</td></tr><tr><td>Nagato</td><td>17</td></tr><tr><td>Itsuki</td><td>17</td></tr><tr><td>Tsuruya</td><td>18</td></tr></table>
+			<table class="table" id="table6" style=""><thead><th>name</th><th>age</th></thead><tbody><tr><td>Haruhi</td><td>17</td></tr><tr><td>Mikuru</td><td>18</td></tr><tr><td>Kyon</td><td>17</td></tr><tr><td>Nagato</td><td>17</td></tr><tr><td>Itsuki</td><td>17</td></tr><tr><td>Tsuruya</td><td>18</td></tr></tbody></table>
 		</div>
 
 	</div>
@@ -834,7 +878,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can also use the styles available to tables</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code31">table_from_hashes [
+			<textarea id="code34">table_from_hashes [
 	{name: "Haruhi", age: 17, class: "2-B"},
 	{name: "Mikuru", age: 18, class: "3-A"},
 	{name: "Kyon", age: 17, class: "2-B"},
@@ -844,7 +888,7 @@ end</textarea>
 ], bordered: true, striped: true</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-bordered table-striped" id="table7"><thead><th>name</th><th>age</th><th>class</th></thead><tr><td>Haruhi</td><td>17</td><td>2-B</td></tr><tr><td>Mikuru</td><td>18</td><td>3-A</td></tr><tr><td>Kyon</td><td>17</td><td>2-B</td></tr><tr><td>Nagato</td><td>17</td><td>2-A</td></tr><tr><td>Itsuki</td><td>17</td><td>2-C</td></tr><tr><td>Tsuruya</td><td>18</td><td>3-A</td></tr></table>
+			<table class="table table-bordered table-striped" id="table7" style=""><thead><th>name</th><th>age</th><th>class</th></thead><tbody><tr><td>Haruhi</td><td>17</td><td>2-B</td></tr><tr><td>Mikuru</td><td>18</td><td>3-A</td></tr><tr><td>Kyon</td><td>17</td><td>2-B</td></tr><tr><td>Nagato</td><td>17</td><td>2-A</td></tr><tr><td>Itsuki</td><td>17</td><td>2-C</td></tr><tr><td>Tsuruya</td><td>18</td><td>3-A</td></tr></tbody></table>
 		</div>
 
 	</div>
@@ -854,7 +898,7 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Describing multiple pages in one weave file</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>It is possible to describe multiple pages in one weave file. Simply pass it two arguments, the first being the path of the page, and the second the title of the page</p><textarea id="code32">center_page "Multi-page example" do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Describing multiple pages in one weave file</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>It is possible to describe multiple pages in one weave file. Simply pass it two arguments, the first being the path of the page, and the second the title of the page</p><textarea id="code35">center_page "Multi-page example" do
 	ibox do
 		h2 "Hello world!"
 		ul style: "text-align:left" do
@@ -876,7 +920,7 @@ center_page "page2", "Hello world" do
 		h2 "Sub page 2"
 		p "This page will have a path of page2"
 	end
-end</textarea><a href="examples/multiple_page/" target="_blank"><span>See it in action <i class="fa fa-external-link"></i></span></a><p>This is usually useful if you are generating a site with multiple pages generated from some data</p></div></div>
+end</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/multiple_page/">See it in action</a><p>This is usually useful if you are generating a site with multiple pages generated from some data</p></div></div>
 		</div>
 
 	</div>
@@ -1136,16 +1180,12 @@ end</textarea><a href="examples/multiple_page/" target="_blank"><span>See it in 
 			);
 	    });
 
-		$('#table4').DataTable();
-
 		$(document).ready(function()
 		{
 			CodeMirror.fromTextArea(document.getElementById("code29"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
-
-		$('#table5').footable();
 
 		$(document).ready(function()
 		{
@@ -1161,9 +1201,34 @@ end</textarea><a href="examples/multiple_page/" target="_blank"><span>See it in 
 			);
 	    });
 
+		$('#table4').DataTable();
+
 		$(document).ready(function()
 		{
 			CodeMirror.fromTextArea(document.getElementById("code32"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$('#table5').footable();
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code33"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code34"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code35"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
