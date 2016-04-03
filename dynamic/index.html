@@ -15,10 +15,6 @@
 
     <link href="../css/plugins/codemirror/codemirror.css" rel="stylesheet">
 
-    <link href="../css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
-
-    <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
-
 
     	<link href="../css/style.css" rel="stylesheet">
 
@@ -67,12 +63,12 @@
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Button action</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code0">button "Click me" do
+			<textarea id="code0">normal_button "Click me" do
 	script "alert('hello')"
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<button type="button" class="btn btn-primary    " onclick="action0(this)">Click me</button>
+			<normal_button><script>alert('hello')</script></normal_button>
 		</div>
 
 	</div>
@@ -84,7 +80,7 @@ end</textarea>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Form</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code1">form do
+			<textarea id="code1">wform do
 	textfield "email", "Email"
 	textfield "ip", "IP Address", mask: "999.999.999.999"
 	passwordfield "pass", "Password"
@@ -120,7 +116,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<form id="form0" role="form"><div class="form-group"><label>Email</label><input type="text" placeholder="" id="textfield0" name="email" class="form-control" /></div><div class="form-group"><label>IP Address</label><input type="text" placeholder="" id="textfield1" name="ip" class="form-control" data-mask="999.999.999.999" /></div><div class="form-group"><label>Password</label><input type="password" placeholder="" id="textfield2" name="pass" class="form-control" /></div><div class="i-checks"><label><input type="checkbox" name="haro" id="checkbox0"> Hello</input></label></div><div class="i-checks"><label><input checked="" type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label><input type="radio" value="x5" name="options"> Option 3</input></label></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select class="form-control" name="cities" id="select0" placeholder=" "><option>Tokyo</option><option>London</option><option>Paris</option></select></div></div><input id="knob0" type="text" value="0" class="dial" data-fgColor="#1AB394" data-width="85" data-height="85" /><input id="knob1" type="text" value="0" class="dial" data-step="10" data-min="0" data-max="100" data-fgColor="#1AB394" data-width="85" data-height="85" /><div class="form-group"><label class="control-label">Select People</label><div class="input-group" style="width: 100%"><select multiple="true" class="form-control" name="people" id="select1" placeholder=" "><option>Kyon</option><option>Haruhi</option><option>Nagato</option><option>Mikuru</option><option>Tsuruya</option></select></div></div><button type="button" class="btn btn-primary    " onclick="action1(this, get_form0_object())">See form contents</button></form>
+			<wform><textfield /><textfield /><passwordfield /><checkbox /><radio /><dropdown /><knob>percent</knob><knob step="10" min="0" max="100">tenths</knob><dropdown /><submit><script>alert(JSON.stringify(data));</script></submit></wform>
 		</div>
 
 	</div>
@@ -365,12 +361,6 @@ end</textarea>
 
     <script src="../js/plugins/codemirror/mode/ruby/ruby.js"></script>
 
-    <script src="../js/plugins/jasny/jasny-bootstrap.min.js"></script>
-
-    <script src="../js/plugins/iCheck/icheck.min.js"></script>
-
-    <script src="../js/plugins/jsKnob/jquery.knob.js"></script>
-
 
     <!-- blueimp gallery -->
     <script src="../js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
@@ -401,48 +391,12 @@ end</textarea>
 			);
 	    });
 
-function action0(caller, data) {
-	alert('hello')
-}
-
 		$(document).ready(function()
 		{
 			CodeMirror.fromTextArea(document.getElementById("code1"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
-
-function action1(caller, data) {
-	alert(JSON.stringify(data));
-}
-
-function get_form0_object()
-{
-	var object = {}
-	object["email"] = $('#textfield0').val();
-
-	object["ip"] = $('#textfield1').val();
-
-	object["pass"] = $('#textfield2').val();
-
-	object["haro"] = $('#checkbox0').is(":checked");
-
-	object["options"] = $('input[name=options]:checked', '#form0').val()
-
-	object["cities"] = $( "#select0 option:selected" ).text();
-
-	object["percent"] = $('#knob0').val();
-
-	object["tenths"] = $('#knob1').val();
-
-	var selections = []; 
-	$("#select1 option:selected").each(function(i, selected){ 
-  		selections[i] = $(selected).text(); 
-	});
-	object["people"] = selections;
-
-	return object;
-}
 
 		$(document).ready(function()
 		{
@@ -1100,7 +1054,7 @@ function get_form0_object()
 			);
 	    });
 
-function action2(caller, data) {
+function action0(caller, data) {
 	alert(JSON.stringify(data))
 }
 
@@ -1127,7 +1081,7 @@ function action2(caller, data) {
 			if ($.isArray(data_object))
 			{
 
-				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" onclick=\\\"action2(this, $(this).closest('td').data('object'))\\\">###name###</button>\"}]");
+				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" onclick=\\\"action0(this, $(this).closest('td').data('object'))\\\">###name###</button>\"}]");
 				var columns = {};
 				var columnTitles = [];
 				head.empty();
@@ -1196,16 +1150,6 @@ function action2(caller, data) {
 
 	refresh_table_dyn_table6();
 
-
-$(document).ready(function () {
-    $('.i-checks').iCheck({
-        checkboxClass: 'icheckbox_square-green',
-        radioClass: 'iradio_square-green',
-    });
-});
-
-
-	$(".dial").knob();
 
 
     </script>
