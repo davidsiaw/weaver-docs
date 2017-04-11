@@ -17,14 +17,6 @@
 
     <link href="css/crossfade_style.css" rel="stylesheet">
 
-    <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-
-    <link href="css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-
-    <link href="css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
-
-    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
-
 
     	<link href="css/style.css" rel="stylesheet">
 
@@ -48,7 +40,7 @@
 
 		            <div class="navbar-collapse collapse" id="navbar">
 		                <ul class="nav navbar-nav">
-<li><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/"><span class="nav-label"><i class="fa fa-th-large"></i>Static Features</span></a></li><li><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/dynamic/"><span class="nav-label"><i class="fa fa-th-large"></i>Dynamic Features</span></a></li>
+<li><a href="http://davidsiaw.github.io/weaver-docs/v0.2.1/"><span class="nav-label"><i class="fa fa-th-large"></i>Static Features</span></a></li><li><a href="http://davidsiaw.github.io/weaver-docs/v0.2.1/"><span class="nav-label"><i class="fa fa-th-large"></i>Dynamic Features</span></a></li>
 		                </ul>
 		                <ul class="nav navbar-top-links navbar-right">
 		                	<!-- NAV RIGHT -->
@@ -243,7 +235,7 @@ text "User"</textarea>
 			<textarea id="code8">image "kagamin.png"</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style=" border-radius: px" />
+			<img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.1/images/kagamin.png" style=" border-radius: px" />
 		</div>
 
 	</div>
@@ -258,7 +250,7 @@ text "User"</textarea>
 			<textarea id="code9">crossfade_image "kagamin-under.png", "kagamin.png"</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<div class="crossfade"><img class="img-responsive bottom" src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style=" border-radius: px" /><img class="img-responsive top" src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin-under.png" style=" border-radius: px" /></div><img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style=" border-radius: px" />
+			<div class="crossfade"><img class="img-responsive bottom" src="http://davidsiaw.github.io/weaver-docs/v0.2.1/images/kagamin.png" style=" border-radius: px" /><img class="img-responsive top" src="http://davidsiaw.github.io/weaver-docs/v0.2.1/images/kagamin-under.png" style=" border-radius: px" /></div><img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.1/images/kagamin.png" style=" border-radius: px" />
 		</div>
 
 	</div>
@@ -606,213 +598,9 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Tables can also be made the standard way</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can make tables easily from an array of Hashes</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code24">table do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" } 
-	end
-end</textarea>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table" id="table0" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
-		</div>
-
-	</div>
-</div></div>
-		</div>
-
-	</div>
-	<div class="row ">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Bordered style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can mix and match styles</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code25">table bordered: true do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" } 
-	end
-end</textarea>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-bordered" id="table1" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
-		</div>
-
-	</div>
-</div></div>
-		</div>
-
-	</div>
-	<div class="row ">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Hover style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code26">table hover: true do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" } 
-	end
-end</textarea>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-hover" id="table2" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
-		</div>
-
-	</div>
-</div></div>
-		</div>
-
-	</div>
-	<div class="row ">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Striped style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code27">table striped: true do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" } 
-	end
-end</textarea>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-striped" id="table3" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
-		</div>
-
-	</div>
-</div></div>
-		</div>
-
-	</div>
-	<div class="row ">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Data Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Data table JQuery plugin</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code28">table system: :data_table do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" } 
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" } 
-	end
-end</textarea>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table" id="table4" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
-		</div>
-
-	</div>
-</div><div class="ibox-footer"><p>Supported systems are :data_table and :foo_table</p></div></div>
-		</div>
-
-	</div>
-	<div class="row ">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Foo Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Foo Table plugin</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code29">table system: :foo_table do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-		th :"data-hide" => :all do
-			text "Info"
-		end
-		th :"data-hide" => :all do
-			text "Power"
-		end
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" } 
-		td { text "Uninterested in humans" }
-		td { text "Reality change" }
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" } 
-		td { text "Is the real God" }
-		td { text "Control over Haruhi" }
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" } 
-		td { text "Classified information" }
-		td { text "Classified information" }
-	end
-end</textarea>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table toggle-arrow-tiny" id="table5" style=""><thead><th>Name</th><th>Class</th><th data-hide="all">Info</th><th data-hide="all">Power</th></thead><tr><td>Haruhi</td><td>2-B</td><td>Uninterested in humans</td><td>Reality change</td></tr><tr><td>Kyon</td><td>2-B</td><td>Is the real God</td><td>Control over Haruhi</td></tr><tr><td>Mikuru</td><td>3-A</td><td>Classified information</td><td>Classified information</td></tr></table>
-		</div>
-
-	</div>
-</div><div class="ibox-footer"><p>Supported systems are :data_table and :foo_table</p></div></div>
-		</div>
-
-	</div>
-	<div class="row ">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can make also tables easily from an array of Hashes</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code30">table_from_hashes [
+			<textarea id="code24">table_from_hashes [
 	{name: "Haruhi", age: 17},
 	{name: "Mikuru", age: 18},
 	{name: "Kyon", age: 17},
@@ -822,7 +610,7 @@ end</textarea>
 ]</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table" id="table6" style=""><thead><th>name</th><th>age</th></thead><tbody><tr><td>Haruhi</td><td>17</td></tr><tr><td>Mikuru</td><td>18</td></tr><tr><td>Kyon</td><td>17</td></tr><tr><td>Nagato</td><td>17</td></tr><tr><td>Itsuki</td><td>17</td></tr><tr><td>Tsuruya</td><td>18</td></tr></tbody></table>
+			<table class="table" id="table0"><thead><th>name</th><th>age</th></thead><tr><td>Haruhi</td><td>17</td></tr><tr><td>Mikuru</td><td>18</td></tr><tr><td>Kyon</td><td>17</td></tr><tr><td>Nagato</td><td>17</td></tr><tr><td>Itsuki</td><td>17</td></tr><tr><td>Tsuruya</td><td>18</td></tr></table>
 		</div>
 
 	</div>
@@ -832,29 +620,7 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can also use the styles available to tables</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code31">table_from_hashes [
-	{name: "Haruhi", age: 17, class: "2-B"},
-	{name: "Mikuru", age: 18, class: "3-A"},
-	{name: "Kyon", age: 17, class: "2-B"},
-	{name: "Nagato", age: 17, class: "2-A"},
-	{name: "Itsuki", age: 17, class: "2-C"},
-	{name: "Tsuruya", age: 18, class: "3-A"}
-], bordered: true, striped: true</textarea>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<table class="table table-bordered table-striped" id="table7" style=""><thead><th>name</th><th>age</th><th>class</th></thead><tbody><tr><td>Haruhi</td><td>17</td><td>2-B</td></tr><tr><td>Mikuru</td><td>18</td><td>3-A</td></tr><tr><td>Kyon</td><td>17</td><td>2-B</td></tr><tr><td>Nagato</td><td>17</td><td>2-A</td></tr><tr><td>Itsuki</td><td>17</td><td>2-C</td></tr><tr><td>Tsuruya</td><td>18</td><td>3-A</td></tr></tbody></table>
-		</div>
-
-	</div>
-</div></div>
-		</div>
-
-	</div>
-	<div class="row ">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Describing multiple pages in one weave file</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>It is possible to describe multiple pages in one weave file. Simply pass it two arguments, the first being the path of the page, and the second the title of the page</p><textarea id="code32">center_page "Multi-page example" do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Describing multiple pages in one weave file</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>It is possible to describe multiple pages in one weave file. Simply pass it two arguments, the first being the path of the page, and the second the title of the page</p><textarea id="code25">center_page "Multi-page example" do
 	ibox do
 		h2 "Hello world!"
 		ul style: "text-align:left" do
@@ -899,16 +665,6 @@ end</textarea><a href="examples/multiple_page/" target="_blank"><span>See it in 
     <script src="js/plugins/codemirror/mode/ruby/ruby.js"></script>
 
     <script src="js/plugins/codemirror/mode/javascript/javascript.js"></script>
-
-    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
-
-    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
-
-    <script src="js/plugins/dataTables/dataTables.responsive.js"></script>
-
-    <script src="js/plugins/dataTables/dataTables.tableTools.min.js"></script>
-
-    <script src="js/plugins/footable/footable.all.min.js"></script>
 
 
     <!-- blueimp gallery -->
@@ -1111,59 +867,6 @@ end</textarea><a href="examples/multiple_page/" target="_blank"><span>See it in 
 		$(document).ready(function()
 		{
 			CodeMirror.fromTextArea(document.getElementById("code25"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code26"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code27"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code28"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
-		$('#table4').DataTable();
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code29"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
-		$('#table5').footable();
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code30"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code31"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code32"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
