@@ -48,7 +48,7 @@
 
 		            <div class="navbar-collapse collapse" id="navbar">
 		                <ul class="nav navbar-nav">
-<li ><a href="http://davidsiaw.github.io/weaver-docs/"><span class="nav-label"><i class="fa fa-th-large"></i>Static Features</span></a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/dynamic"><span class="nav-label"><i class="fa fa-th-large"></i>Dynamic Features</span></a></li>
+<li ><a href="http://davidsiaw.github.io/weaver-docs/"><span class="nav-label"><i class="fa fa-th-large"></i>Static Features</span></a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/dynamic/"><span class="nav-label"><i class="fa fa-th-large"></i>Dynamic Features</span></a></li><li ><li class="dropdown"><a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th"></i>Other Versions<span class="caret"></span></a><ul role="menu" class="dropdown-menu"><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.5.4">v0.5.4</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.5.3">v0.5.3</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.5.2">v0.5.2</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.5.1">v0.5.1</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.5.0">v0.5.0</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.4.1">v0.4.1</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.4.0">v0.4.0</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.8">v0.3.8</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.7">v0.3.7</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.6">v0.3.6</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.5">v0.3.5</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.4">v0.3.4</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.3">v0.3.3</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.2">v0.3.2</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1">v0.3.1</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.3.0">v0.3.0</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2">v0.2.2</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.2.1">v0.2.1</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0">v0.2.0</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.1.9">v0.1.9</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.1.8">v0.1.8</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.1.7">v0.1.7</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.1.5">v0.1.5</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.1.2">v0.1.2</a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.1.1">v0.1.1</a></li></ul></li></li>
 		                </ul>
 		                <ul class="nav navbar-top-links navbar-right">
 		                	<!-- NAV RIGHT -->
@@ -118,7 +118,23 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Form elements with default values (refresh to reset)</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code2">wform do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Textfield features</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code2">wform do
+	textfield "twitter", "Twitter Handle", placeholder: "google", front_text: "@"
+	textfield "cents", "Cents", placeholder: "125", back_text: "¢"
+	textfield "tracking_no", "Tracking Number", placeholder: "A53GBAW23", front_text: "EM", back_text: "JP"
+
+
+	submit "See form contents" do
+		script "alert(JSON.stringify(data));" 
+	end
+
+end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><form id="form1" role="form"><div class="form-group " id="textfield3-group"><label>Twitter Handle</label><div class="input-group m-b"><span class="input-group-addon">@</span><input type="text" placeholder="google" id="textfield3" name="twitter" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div></div><div class="form-group " id="textfield4-group"><label>Cents</label><div class="input-group m-b"><input type="text" placeholder="125" id="textfield4" name="cents" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /><span class="input-group-addon">¢</span></div></div><div class="form-group " id="textfield5-group"><label>Tracking Number</label><div class="input-group m-b"><span class="input-group-addon">EM</span><input type="text" placeholder="A53GBAW23" id="textfield5" name="tracking_no" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /><span class="input-group-addon">JP</span></div></div><button type="submit" class="btn btn-primary    " id="" onclick="action2(this, get_form1_object()); return false;">See form contents</button></form></div></div></div></div>
+		</div>
+
+	</div>
+	<div class="row " style="">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Form elements with default values (refresh to reset)</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code3">wform do
 	textfield "service_name", "Service Name", value: "google"
 
 	radio "options", [
@@ -139,13 +155,13 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 		script "alert(JSON.stringify(data));" 
 	end
 
-end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><form id="form1" role="form"><div class="form-group " id="textfield3-group"><label>Service Name</label><div class=" "><input type="text" placeholder="" id="textfield3" name="service_name" rows="" class="form-control" value="google" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div></div><div ><div class="i-checks"><label ><input type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label ><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label ><input checked="" type="radio" value="x5" name="options"> Option 3</input></label></div></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select value="London" class="form-control" name="cities" id="select2" placeholder=" "><option>Tokyo</option><option selected="true">London</option><option>Paris</option><option>Berlin</option><option>New York</option></select></div></div><button type="submit" class="btn btn-primary    " id="" onclick="action2(this, get_form1_object()); return false;">See form contents</button></form></div></div></div></div>
+end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><form id="form2" role="form"><div class="form-group " id="textfield6-group"><label>Service Name</label><div class=" "><input type="text" placeholder="" id="textfield6" name="service_name" rows="" class="form-control" value="google" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div></div><div ><div class="i-checks"><label ><input type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label ><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label ><input checked="" type="radio" value="x5" name="options"> Option 3</input></label></div></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select value="London" class="form-control" name="cities" id="select2" placeholder=" "><option>Tokyo</option><option selected="true">London</option><option>Paris</option><option>Berlin</option><option>New York</option></select></div></div><button type="submit" class="btn btn-primary    " id="" onclick="action3(this, get_form2_object()); return false;">See form contents</button></form></div></div></div></div>
 		</div>
 
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Customizing submit button</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code3">wform do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Customizing submit button</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code4">wform do
 
 	hiddenfield "name", "Mewtwo"
 
@@ -187,13 +203,13 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 		script "alert(JSON.stringify(data));" 
 	end
 
-end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><form id="form2" role="form"><input type="hidden" value="Mewtwo" id="hiddenfield0" name="name" /><button type="submit" class="btn btn-primary    " id="" onclick="action3(this, get_form2_object()); return false;">Normal</button><button type="submit" class="btn btn-primary  btn-block  " id="" onclick="action4(this, get_form2_object()); return false;">Block version</button><br  /><button type="submit" class="btn btn-primary   btn-outline " id="" onclick="action5(this, get_form2_object()); return false;">Outline version</button><br  /><button type="submit" class="btn btn-primary    dim" id="" onclick="action6(this, get_form2_object()); return false;">3D version</button><br  /><button type="submit" class="btn btn-primary    dim btn-large-dim" id="" onclick="action7(this, get_form2_object()); return false;"><i class="fa fa-ambulance"></i></button><br  /><button type="submit" class="btn btn-primary    btn-rounded" id="" onclick="action8(this, get_form2_object()); return false;">Words</button><br  /><button type="submit" class="btn btn-primary    btn-circle" id="" onclick="action9(this, get_form2_object()); return false;"><i class="fa fa-user"></i></button></form></div></div></div></div>
+end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><form id="form3" role="form"><input type="hidden" value="Mewtwo" id="hiddenfield0" name="name" /><button type="submit" class="btn btn-primary    " id="" onclick="action4(this, get_form3_object()); return false;">Normal</button><button type="submit" class="btn btn-primary  btn-block  " id="" onclick="action5(this, get_form3_object()); return false;">Block version</button><br  /><button type="submit" class="btn btn-primary   btn-outline " id="" onclick="action6(this, get_form3_object()); return false;">Outline version</button><br  /><button type="submit" class="btn btn-primary    dim" id="" onclick="action7(this, get_form3_object()); return false;">3D version</button><br  /><button type="submit" class="btn btn-primary    dim btn-large-dim" id="" onclick="action8(this, get_form3_object()); return false;"><i class="fa fa-ambulance"></i></button><br  /><button type="submit" class="btn btn-primary    btn-rounded" id="" onclick="action9(this, get_form3_object()); return false;">Words</button><br  /><button type="submit" class="btn btn-primary    btn-circle" id="" onclick="action10(this, get_form3_object()); return false;"><i class="fa fa-user"></i></button></form></div></div></div></div>
 		</div>
 
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Radio buttons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code4">wform do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Radio buttons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code5">wform do
 
 	radio "options", [
 		{label:"Option 1",value:"x1"}, 
@@ -205,23 +221,23 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 		script "alert(JSON.stringify(data));" 
 	end
 
-end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><form id="form3" role="form"><div data-toggle="buttons"><label class="btn btn-primary btn-block btn-outline"><input type="radio" value="x1" name="options" />Option 1</label><label class="btn btn-primary btn-block btn-outline"><input type="radio" value="x3" name="options" />Option 2</label><label class="btn btn-primary btn-block btn-outline"><input checked="" type="radio" value="x5" name="options" />Option 3</label></div><button type="submit" class="btn btn-primary    " id="" onclick="action10(this, get_form3_object()); return false;">See form contents</button></form></div></div></div></div>
+end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><form id="form4" role="form"><div data-toggle="buttons"><label class="btn btn-primary btn-block btn-outline"><input type="radio" value="x1" name="options" />Option 1</label><label class="btn btn-primary btn-block btn-outline"><input type="radio" value="x3" name="options" />Option 2</label><label class="btn btn-primary btn-block btn-outline"><input checked="" type="radio" value="x5" name="options" />Option 3</label></div><button type="submit" class="btn btn-primary    " id="" onclick="action11(this, get_form4_object()); return false;">See form contents</button></form></div></div></div></div>
 		</div>
 
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Dynamic tables take json information from a URL and displays it in table form</p><textarea id="code5">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Dynamic tables take json information from a URL and displays it in table form</p><textarea id="code6">raw_page do
 	h = {name: "haruka", age: "17", color: "red"}
 	text h.to_json
 end
-</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data1/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code6">table_from_source "../examples/data1/"</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table0" style=""><thead id="dyn_table0_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table0_body"></tbody></table></div></div></div></div>
+</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data1/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code7">table_from_source "../examples/data1/"</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table0" style=""><thead id="dyn_table0_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table0_body"></tbody></table></div></div></div></div>
 		</div>
 
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with an array</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>If the input is an array it will attempt to display all the information in that array</p><textarea id="code7">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with an array</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>If the input is an array it will attempt to display all the information in that array</p><textarea id="code8">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -235,13 +251,13 @@ end
 	text h.to_json
 end
 
-</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code8">table_from_source "../examples/data2/"</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table1" style=""><thead id="dyn_table1_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table1_body"></tbody></table></div></div></div></div>
+</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code9">table_from_source "../examples/data2/"</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table1" style=""><thead id="dyn_table1_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table1_body"></tbody></table></div></div></div></div>
 		</div>
 
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the columns that you want to show</p><textarea id="code9">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the columns that you want to show</p><textarea id="code10">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -255,13 +271,13 @@ end
 	text h.to_json
 end
 
-</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code10">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table2" style=""><thead id="dyn_table2_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table2_body"></tbody></table></div></div></div></div>
+</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code11">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table2" style=""><thead id="dyn_table2_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table2_body"></tbody></table></div></div></div></div>
 		</div>
 
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code11">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code12">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -275,7 +291,7 @@ end
 	text h.to_json
 end
 
-</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code12">table_from_source "../examples/data2/" do
+</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code13">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age"
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table3" style=""><thead id="dyn_table3_head"><th>Idol Name</th><th>Idol Age</th></thead><tbody id="dyn_table3_body"></tbody></table></div></div></div></div>
@@ -284,7 +300,7 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with icon columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code13">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with icon columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code14">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -298,7 +314,7 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	text h.to_json
 end
 
-</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code14">table_from_source "../examples/data2/" do
+</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code15">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="dyn_table4" style=""><thead id="dyn_table4_head"><th>Idol Name</th><th><i class="fa fa-calendar"></i> Idol Age</th></thead><tbody id="dyn_table4_body"></tbody></table></div></div></div></div>
@@ -307,7 +323,7 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with custom columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the what the cells of each column looks like too.</p><p>The ###something### is replaced with the name of the member inside the object</p><textarea id="code15">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with custom columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the what the cells of each column looks like too.</p><p>The ###something### is replaced with the name of the member inside the object</p><textarea id="code16">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red", inv_color:"white"},
 		{name: "chihaya", age: "17", color: "blue", inv_color:"white"},
@@ -327,7 +343,7 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	text h.to_json
 end
 
-</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data3/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code16">table_from_source "../examples/data3/" do
+</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data3/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code17">table_from_source "../examples/data3/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar 
 	column "color", title: "Idol Color", icon: :eye do
@@ -339,7 +355,7 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with buttons that access row data</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can create data buttons that can access the row data and allow you to access the information on the row</p><textarea id="code17">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with buttons that access row data</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can create data buttons that can access the row data and allow you to access the information on the row</p><textarea id="code18">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -353,7 +369,7 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	text h.to_json
 end
 
-</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code18">table_from_source "../examples/data2/" do
+</textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code19">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar
 	column "button", title: "Button" do 
@@ -462,11 +478,11 @@ function action2(caller, data) {
 function get_form1_object()
 {
 	var object = {}
-	object["service_name"] = $('#textfield3').val();
+	object["twitter"] = $('#textfield3').val();
 
-	object["options"] = $('input[name=options]:checked', '#form1').val()
+	object["cents"] = $('#textfield4').val();
 
-	object["cities"] = $( "#select2 option:selected" ).text();
+	object["tracking_no"] = $('#textfield5').val();
 
 	return object;
 }
@@ -481,6 +497,25 @@ function get_form1_object()
 function action3(caller, data) {
 	alert(JSON.stringify(data));
 }
+
+function get_form2_object()
+{
+	var object = {}
+	object["service_name"] = $('#textfield6').val();
+
+	object["options"] = $('input[name=options]:checked', '#form2').val()
+
+	object["cities"] = $( "#select2 option:selected" ).text();
+
+	return object;
+}
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code4"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
 
 function action4(caller, data) {
 	alert(JSON.stringify(data));
@@ -506,21 +541,6 @@ function action9(caller, data) {
 	alert(JSON.stringify(data));
 }
 
-function get_form2_object()
-{
-	var object = {}
-	object["name"] = $('#hiddenfield0').val();
-
-	return object;
-}
-
-		$(document).ready(function()
-		{
-			CodeMirror.fromTextArea(document.getElementById("code4"), 
-				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
-			);
-	    });
-
 function action10(caller, data) {
 	alert(JSON.stringify(data));
 }
@@ -528,7 +548,7 @@ function action10(caller, data) {
 function get_form3_object()
 {
 	var object = {}
-	object["options"] = $('input[name=options]:checked', '#form3').val()
+	object["name"] = $('#hiddenfield0').val();
 
 	return object;
 }
@@ -540,9 +560,28 @@ function get_form3_object()
 			);
 	    });
 
+function action11(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function get_form4_object()
+{
+	var object = {}
+	object["options"] = $('input[name=options]:checked', '#form4').val()
+
+	return object;
+}
+
 		$(document).ready(function()
 		{
 			CodeMirror.fromTextArea(document.getElementById("code6"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code7"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -663,14 +702,14 @@ function get_form3_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code7"), 
+			CodeMirror.fromTextArea(document.getElementById("code8"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code8"), 
+			CodeMirror.fromTextArea(document.getElementById("code9"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -791,14 +830,14 @@ function get_form3_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code9"), 
+			CodeMirror.fromTextArea(document.getElementById("code10"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code10"), 
+			CodeMirror.fromTextArea(document.getElementById("code11"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -919,14 +958,14 @@ function get_form3_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code11"), 
+			CodeMirror.fromTextArea(document.getElementById("code12"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code12"), 
+			CodeMirror.fromTextArea(document.getElementById("code13"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -1047,14 +1086,14 @@ function get_form3_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code13"), 
+			CodeMirror.fromTextArea(document.getElementById("code14"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code14"), 
+			CodeMirror.fromTextArea(document.getElementById("code15"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -1175,14 +1214,14 @@ function get_form3_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code15"), 
+			CodeMirror.fromTextArea(document.getElementById("code16"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code16"), 
+			CodeMirror.fromTextArea(document.getElementById("code17"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -1303,19 +1342,19 @@ function get_form3_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code17"), 
+			CodeMirror.fromTextArea(document.getElementById("code18"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code18"), 
+			CodeMirror.fromTextArea(document.getElementById("code19"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
-function action11(caller, data) {
+function action12(caller, data) {
 	alert(JSON.stringify(data))
 }
 
@@ -1354,7 +1393,7 @@ function action11(caller, data) {
 			if ($.isArray(data_object))
 			{
 
-				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null,\"transform\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null,\"transform\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" id=\\\"\\\" onclick=\\\"action11(this, $(this).closest('td').data('object'))\\\">###name###</button>\",\"transform\":null}]");
+				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null,\"transform\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null,\"transform\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" id=\\\"\\\" onclick=\\\"action12(this, $(this).closest('td').data('object'))\\\">###name###</button>\",\"transform\":null}]");
 				var columns = {};
 				var columnTitles = [];
 				head.empty();
