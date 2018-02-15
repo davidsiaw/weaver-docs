@@ -125,7 +125,7 @@ end</textarea>
 end</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<form id="form0" role="form"><div class="form-group " id="textfield0-group"><label>Email</label><input type="text" placeholder="" id="textfield0" name="email" rows="" class="form-control" value="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div><div class="form-group " id="textfield1-group"><label>IP Address</label><input type="text" placeholder="" id="textfield1" name="ip" rows="" class="form-control" value="" autocomplete="on" autocorrect="on" autocapitalize="off" data-mask="999.999.999.999" /></div><div class="form-group " id="textfield2-group"><label>Password</label><input type="password" placeholder="" id="textfield2" name="pass" rows="" class="form-control" value="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div><div class="i-checks"><label><input type="checkbox" name="haro" id="checkbox0"> Hello</input></label></div><div class="i-checks"><label><input checked="" type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label><input type="radio" value="x5" name="options"> Option 3</input></label></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select class="form-control" name="cities" id="select0" placeholder=" "><option>Tokyo</option><option>London</option><option>Paris</option></select></div></div><input id="knob0" type="text" value="0" class="dial" data-fgColor="#1AB394" data-width="85" data-height="85" /><input id="knob1" type="text" value="0" class="dial" data-step="10" data-min="0" data-max="100" data-fgColor="#1AB394" data-width="85" data-height="85" /><div class="form-group"><label class="control-label">Select People</label><div class="input-group" style="width: 100%"><select multiple="true" class="form-control" name="people" id="select1" placeholder=" "><option>Kyon</option><option>Haruhi</option><option>Nagato</option><option>Mikuru</option><option>Tsuruya</option></select></div></div><button type="submit" class="btn btn-primary    " id="" onclick="action1(this, get_form0_object()); return false;">See form contents</button></form>
+			<form id="form0" role="form"><div class="form-group"><label>Email</label><input type="text" placeholder="" id="textfield0" name="email" rows="" class="form-control" autocomplete="on" autocorrect="on" autocapitalize="off" /></div><div class="form-group"><label>IP Address</label><input type="text" placeholder="" id="textfield1" name="ip" rows="" class="form-control" autocomplete="on" autocorrect="on" autocapitalize="off" data-mask="999.999.999.999" /></div><div class="form-group"><label>Password</label><input type="password" placeholder="" id="textfield2" name="pass" rows="" class="form-control" autocomplete="on" autocorrect="on" autocapitalize="off" /></div><div class="i-checks"><label><input type="checkbox" name="haro" id="checkbox0"> Hello</input></label></div><div class="i-checks"><label><input checked="" type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label><input type="radio" value="x5" name="options"> Option 3</input></label></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select class="form-control" name="cities" id="select0" placeholder=" "><option>Tokyo</option><option>London</option><option>Paris</option></select></div></div><input id="knob0" type="text" value="0" class="dial" data-fgColor="#1AB394" data-width="85" data-height="85" /><input id="knob1" type="text" value="0" class="dial" data-step="10" data-min="0" data-max="100" data-fgColor="#1AB394" data-width="85" data-height="85" /><div class="form-group"><label class="control-label">Select People</label><div class="input-group" style="width: 100%"><select multiple="true" class="form-control" name="people" id="select1" placeholder=" "><option>Kyon</option><option>Haruhi</option><option>Nagato</option><option>Mikuru</option><option>Tsuruya</option></select></div></div><button type="submit" class="btn btn-primary    " id="" onclick="action1(this, get_form0_object()); return false;">See form contents</button></form>
 		</div>
 
 	</div>
@@ -452,11 +452,11 @@ function get_form0_object()
 
 	function refresh_table_dyn_table0()
 	{
-		var query_object = {};
+		var query_object = ;
 
-		$.get( "../examples/data1/" , function( returned_data )
+		$.get( "../examples/data1/" , function( data )
 		{
-			var data = returned_data;
+
 			var data_object = {};
 			if (data !== null && typeof data === 'object')
 			{
@@ -525,7 +525,6 @@ function get_form0_object()
 					var row = $('<tr>');
 					for (var columnIndex = 0; columnIndex < Object.keys(columns).length; columnIndex++) {
 						var cell_data = data_object[index][ Object.keys(columns)[columnIndex] ];
-
 						if (columnData && columnData[columnIndex]["format"])
 						{
 							var format = columnData[columnIndex]["format"];
@@ -538,18 +537,10 @@ function get_form0_object()
 								result = result.replaceAll(matches[matchIndex], data_object[index][member_name]);
 							}
 
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								result = document["transform_" + columnData[columnIndex]["transform"]](result);
-							}
 							row.append($('<td>').html( result ).data("object", data_object[index]) );
 						}
 						else
 						{
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								cell_data = document["transform_" + columnData[columnIndex]["transform"]](cell_data);
-							}
 							row.append($('<td>').text( cell_data ).data("object", data_object[index]) );
 						}
 					}
@@ -580,11 +571,11 @@ function get_form0_object()
 
 	function refresh_table_dyn_table1()
 	{
-		var query_object = {};
+		var query_object = ;
 
-		$.get( "../examples/data2/" , function( returned_data )
+		$.get( "../examples/data2/" , function( data )
 		{
-			var data = returned_data;
+
 			var data_object = {};
 			if (data !== null && typeof data === 'object')
 			{
@@ -653,7 +644,6 @@ function get_form0_object()
 					var row = $('<tr>');
 					for (var columnIndex = 0; columnIndex < Object.keys(columns).length; columnIndex++) {
 						var cell_data = data_object[index][ Object.keys(columns)[columnIndex] ];
-
 						if (columnData && columnData[columnIndex]["format"])
 						{
 							var format = columnData[columnIndex]["format"];
@@ -666,18 +656,10 @@ function get_form0_object()
 								result = result.replaceAll(matches[matchIndex], data_object[index][member_name]);
 							}
 
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								result = document["transform_" + columnData[columnIndex]["transform"]](result);
-							}
 							row.append($('<td>').html( result ).data("object", data_object[index]) );
 						}
 						else
 						{
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								cell_data = document["transform_" + columnData[columnIndex]["transform"]](cell_data);
-							}
 							row.append($('<td>').text( cell_data ).data("object", data_object[index]) );
 						}
 					}
@@ -708,11 +690,11 @@ function get_form0_object()
 
 	function refresh_table_dyn_table2()
 	{
-		var query_object = {};
+		var query_object = ;
 
-		$.get( "../examples/data2/" , function( returned_data )
+		$.get( "../examples/data2/" , function( data )
 		{
-			var data = returned_data;
+
 			var data_object = {};
 			if (data !== null && typeof data === 'object')
 			{
@@ -781,7 +763,6 @@ function get_form0_object()
 					var row = $('<tr>');
 					for (var columnIndex = 0; columnIndex < Object.keys(columns).length; columnIndex++) {
 						var cell_data = data_object[index][ Object.keys(columns)[columnIndex] ];
-
 						if (columnData && columnData[columnIndex]["format"])
 						{
 							var format = columnData[columnIndex]["format"];
@@ -794,18 +775,10 @@ function get_form0_object()
 								result = result.replaceAll(matches[matchIndex], data_object[index][member_name]);
 							}
 
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								result = document["transform_" + columnData[columnIndex]["transform"]](result);
-							}
 							row.append($('<td>').html( result ).data("object", data_object[index]) );
 						}
 						else
 						{
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								cell_data = document["transform_" + columnData[columnIndex]["transform"]](cell_data);
-							}
 							row.append($('<td>').text( cell_data ).data("object", data_object[index]) );
 						}
 					}
@@ -836,11 +809,11 @@ function get_form0_object()
 
 	function refresh_table_dyn_table3()
 	{
-		var query_object = {};
+		var query_object = ;
 
-		$.get( "../examples/data2/" , function( returned_data )
+		$.get( "../examples/data2/" , function( data )
 		{
-			var data = returned_data;
+
 			var data_object = {};
 			if (data !== null && typeof data === 'object')
 			{
@@ -868,7 +841,7 @@ function get_form0_object()
 			if ($.isArray(data_object))
 			{
 
-				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null,\"transform\":null},{\"name\":\"age\",\"title\":\"Idol Age\",\"format\":null,\"transform\":null}]");
+				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"Idol Age\",\"format\":null}]");
 				var columns = {};
 				var columnTitles = [];
 				head.empty();
@@ -909,7 +882,6 @@ function get_form0_object()
 					var row = $('<tr>');
 					for (var columnIndex = 0; columnIndex < Object.keys(columns).length; columnIndex++) {
 						var cell_data = data_object[index][ Object.keys(columns)[columnIndex] ];
-
 						if (columnData && columnData[columnIndex]["format"])
 						{
 							var format = columnData[columnIndex]["format"];
@@ -922,18 +894,10 @@ function get_form0_object()
 								result = result.replaceAll(matches[matchIndex], data_object[index][member_name]);
 							}
 
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								result = document["transform_" + columnData[columnIndex]["transform"]](result);
-							}
 							row.append($('<td>').html( result ).data("object", data_object[index]) );
 						}
 						else
 						{
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								cell_data = document["transform_" + columnData[columnIndex]["transform"]](cell_data);
-							}
 							row.append($('<td>').text( cell_data ).data("object", data_object[index]) );
 						}
 					}
@@ -964,11 +928,11 @@ function get_form0_object()
 
 	function refresh_table_dyn_table4()
 	{
-		var query_object = {};
+		var query_object = ;
 
-		$.get( "../examples/data2/" , function( returned_data )
+		$.get( "../examples/data2/" , function( data )
 		{
-			var data = returned_data;
+
 			var data_object = {};
 			if (data !== null && typeof data === 'object')
 			{
@@ -996,7 +960,7 @@ function get_form0_object()
 			if ($.isArray(data_object))
 			{
 
-				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null,\"transform\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null,\"transform\":null}]");
+				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null}]");
 				var columns = {};
 				var columnTitles = [];
 				head.empty();
@@ -1037,7 +1001,6 @@ function get_form0_object()
 					var row = $('<tr>');
 					for (var columnIndex = 0; columnIndex < Object.keys(columns).length; columnIndex++) {
 						var cell_data = data_object[index][ Object.keys(columns)[columnIndex] ];
-
 						if (columnData && columnData[columnIndex]["format"])
 						{
 							var format = columnData[columnIndex]["format"];
@@ -1050,18 +1013,10 @@ function get_form0_object()
 								result = result.replaceAll(matches[matchIndex], data_object[index][member_name]);
 							}
 
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								result = document["transform_" + columnData[columnIndex]["transform"]](result);
-							}
 							row.append($('<td>').html( result ).data("object", data_object[index]) );
 						}
 						else
 						{
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								cell_data = document["transform_" + columnData[columnIndex]["transform"]](cell_data);
-							}
 							row.append($('<td>').text( cell_data ).data("object", data_object[index]) );
 						}
 					}
@@ -1092,11 +1047,11 @@ function get_form0_object()
 
 	function refresh_table_dyn_table5()
 	{
-		var query_object = {};
+		var query_object = ;
 
-		$.get( "../examples/data3/" , function( returned_data )
+		$.get( "../examples/data3/" , function( data )
 		{
-			var data = returned_data;
+
 			var data_object = {};
 			if (data !== null && typeof data === 'object')
 			{
@@ -1124,7 +1079,7 @@ function get_form0_object()
 			if ($.isArray(data_object))
 			{
 
-				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null,\"transform\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null,\"transform\":null},{\"name\":\"color\",\"title\":\"<i class=\\\"fa fa-eye\\\"></i> Idol Color\",\"format\":\"<span style=\\\"background-color:###color###; color:###inv_color###\\\" type=\\\"plain\\\" class=\\\"label label-plain\\\">###color###</span>\",\"transform\":null}]");
+				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null},{\"name\":\"color\",\"title\":\"<i class=\\\"fa fa-eye\\\"></i> Idol Color\",\"format\":\"<span style=\\\"background-color:###color###; color:###inv_color###\\\" type=\\\"plain\\\" class=\\\"label label-plain\\\">###color###</span>\"}]");
 				var columns = {};
 				var columnTitles = [];
 				head.empty();
@@ -1165,7 +1120,6 @@ function get_form0_object()
 					var row = $('<tr>');
 					for (var columnIndex = 0; columnIndex < Object.keys(columns).length; columnIndex++) {
 						var cell_data = data_object[index][ Object.keys(columns)[columnIndex] ];
-
 						if (columnData && columnData[columnIndex]["format"])
 						{
 							var format = columnData[columnIndex]["format"];
@@ -1178,18 +1132,10 @@ function get_form0_object()
 								result = result.replaceAll(matches[matchIndex], data_object[index][member_name]);
 							}
 
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								result = document["transform_" + columnData[columnIndex]["transform"]](result);
-							}
 							row.append($('<td>').html( result ).data("object", data_object[index]) );
 						}
 						else
 						{
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								cell_data = document["transform_" + columnData[columnIndex]["transform"]](cell_data);
-							}
 							row.append($('<td>').text( cell_data ).data("object", data_object[index]) );
 						}
 					}
@@ -1224,11 +1170,11 @@ function action2(caller, data) {
 
 	function refresh_table_dyn_table6()
 	{
-		var query_object = {};
+		var query_object = ;
 
-		$.get( "../examples/data2/" , function( returned_data )
+		$.get( "../examples/data2/" , function( data )
 		{
-			var data = returned_data;
+
 			var data_object = {};
 			if (data !== null && typeof data === 'object')
 			{
@@ -1256,7 +1202,7 @@ function action2(caller, data) {
 			if ($.isArray(data_object))
 			{
 
-				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null,\"transform\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null,\"transform\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" id=\\\"\\\" onclick=\\\"action2(this, $(this).closest('td').data('object'))\\\">###name###</button>\",\"transform\":null}]");
+				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" id=\\\"\\\" onclick=\\\"action2(this, $(this).closest('td').data('object'))\\\">###name###</button>\"}]");
 				var columns = {};
 				var columnTitles = [];
 				head.empty();
@@ -1297,7 +1243,6 @@ function action2(caller, data) {
 					var row = $('<tr>');
 					for (var columnIndex = 0; columnIndex < Object.keys(columns).length; columnIndex++) {
 						var cell_data = data_object[index][ Object.keys(columns)[columnIndex] ];
-
 						if (columnData && columnData[columnIndex]["format"])
 						{
 							var format = columnData[columnIndex]["format"];
@@ -1310,18 +1255,10 @@ function action2(caller, data) {
 								result = result.replaceAll(matches[matchIndex], data_object[index][member_name]);
 							}
 
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								result = document["transform_" + columnData[columnIndex]["transform"]](result);
-							}
 							row.append($('<td>').html( result ).data("object", data_object[index]) );
 						}
 						else
 						{
-							if (columnData && columnData[columnIndex]["transform"])
-							{
-								cell_data = document["transform_" + columnData[columnIndex]["transform"]](cell_data);
-							}
 							row.append($('<td>').text( cell_data ).data("object", data_object[index]) );
 						}
 					}

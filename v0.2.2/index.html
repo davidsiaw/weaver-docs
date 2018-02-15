@@ -11,6 +11,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
 
     <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
 
@@ -32,12 +33,6 @@
 </head>
 
 <body class='top-navigation'>
-
-<div id="background" style="z-index: -999; position:absolute; left:0px; right:0px; width:100%; height:100%">
-
-</div>
-
-<div id="content" style="z-index: 0">
 		<a href="https://github.com/davidsiaw/weaver"><img style="position: absolute; z-index: 100; top: 50px; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
 	<div id="wrapper">
@@ -53,7 +48,7 @@
 
 		            <div class="navbar-collapse collapse" id="navbar">
 		                <ul class="nav navbar-nav">
-<li ><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/"><span class="nav-label"><i class="fa fa-th-large"></i>Static Features</span></a></li><li ><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/dynamic/"><span class="nav-label"><i class="fa fa-th-large"></i>Dynamic Features</span></a></li>
+<li><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/"><span class="nav-label"><i class="fa fa-th-large"></i>Static Features</span></a></li><li><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/dynamic/"><span class="nav-label"><i class="fa fa-th-large"></i>Dynamic Features</span></a></li>
 		                </ul>
 		                <ul class="nav navbar-top-links navbar-right">
 		                	<!-- NAV RIGHT -->
@@ -68,26 +63,26 @@
 
 	        <div class="wrapper-content">
 	            <div class="container">
-	<div class="row wrapper border-bottom white-bg page-heading" style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row wrapper border-bottom white-bg page-heading">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<h2>Welcome to Weaver</h2><hr  /><p>The following is a rough documentation intended to simply demonstrate and enumerate the facilities provided by weaver</p><p>This documentation page is written in Weaver too! See</p><a href="https://github.com/davidsiaw/weaver-doc-source" target="_blank"><span>https://github.com/davidsiaw/weaver-doc-source <i class="fa fa-external-link"></i></span></a>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<hr  />
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Installing Weaver</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><pre>gem install weaver</pre></div></div>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Creating a new weaver site</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><pre>weaver create my_site</pre><p>This will create a folder that looks like this:</p><pre>my_site/
 ├── Gemfile
 ├── Gemfile.lock
@@ -102,14 +97,14 @@ bundle exec weaver
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Building your website</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>To build your website simply use the following command:</p><pre>bundle exec weaver build</pre><p>Your website will be generated and placed in the <code>build</code> directory</p><p>If your website is not a root website (it is in a subdirectory), then you can add the -r parameter, as we do for this documentation site:</p><pre>bundle exec weaver build -r http://davidsiaw.github.io/weaver-docs/</pre><p>This sets the root for images and other things such as links</p></div></div>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Simple example Weave file</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>The most basic file takes one argument: the title, and a block that contains the contents of the page</p><textarea id="code0">center_page "Hello world" do
 	ibox do
 		h2 "Hello world!"
@@ -118,8 +113,8 @@ end</textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/examples/he
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Weave files only contain Ruby code</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>This means that you can do whatever you can normally do in Ruby</p><textarea id="code1">center_page "Hello world" do
 	ibox do
 		h2 "Hello world!"
@@ -131,10 +126,10 @@ end</textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/examples/lo
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can use all the HTML tags by simply calling them as if they are methods:</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code2">h1 "This is Heading 1"
 h2 "This is Heading 2"
 h3 "This is Heading 3"
@@ -146,7 +141,7 @@ em "This is Emphasized"
 blockquote "This is in a Blockquote"
 p "Paragraph text"</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<h1>This is Heading 1</h1><h2>This is Heading 2</h2><h3>This is Heading 3</h3><h4>This is Heading 4</h4><h5>This is Heading 5</h5><h6>This is Heading 6</h6><pre>This is Preformatted</pre><em>This is Emphasized</em><blockquote>This is in a Blockquote</blockquote><p>Paragraph text</p>
 		</div>
 
@@ -155,15 +150,15 @@ p "Paragraph text"</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can also put attributes on a tag</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>This allows you to change styles, set more attributes on it, etc ...</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code3">span "Some text "
 span "colored ", style:"color:blue"
 span "red ", style:"color:red"</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<span>Some text </span><span style="color:blue">colored </span><span style="color:red">red </span>
 		</div>
 
@@ -172,17 +167,17 @@ span "red ", style:"color:red"</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can also wrap content in another tag</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>This is the same as doing it in HTML. Instead of passing it a string, you use a block</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code4">h3 style:"text-decoration:underline" do
 	span "Some text "
 	span "colored ", style:"color:blue"
 	span "red ", style:"color:red"
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<h3 style="text-decoration:underline"><span>Some text </span><span style="color:blue">colored </span><span style="color:red">red </span></h3>
 		</div>
 
@@ -191,10 +186,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>This works for all tags</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Like lists:</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code5">ul do
 	li { text "Haruhi" }
 	li { text "Kyon" }
@@ -207,7 +202,7 @@ ol do
 	li { text "Tsuruya" }
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<ul><li>Haruhi</li><li>Kyon</li><li>Itsuki</li></ul><ol><li>Nagato</li><li>Mikuru</li><li>Tsuruya</li></ol>
 		</div>
 
@@ -216,17 +211,17 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Icons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>There are icons available in here since the theme uses bootstrap</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code6">icon :github
 text "Github"
 br
 icon :user
 text "User"</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<i class="fa fa-github"></i>Github<br  /><i class="fa fa-user"></i>User
 		</div>
 
@@ -235,13 +230,13 @@ text "User"</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Breadcrumbs</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code7">breadcrumb ["root", "some", "directory"]</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<ol class="breadcrumb"><li>root</li><li>some</li><li>directory</li></ol>
 		</div>
 
@@ -250,14 +245,14 @@ text "User"</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Images</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code8">image "kagamin.png"</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style="" />
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style=" border-radius: px" />
 		</div>
 
 	</div>
@@ -274,14 +269,14 @@ text "User"</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Crossfading images</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code9">crossfade_image "kagamin-under.png", "kagamin.png"</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<div class="crossfade"><img class="img-responsive bottom" src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style="" /><img class="img-responsive top" src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin-under.png" style="" /></div><img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style="" />
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<div class="crossfade"><img class="img-responsive bottom" src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style=" border-radius: px" /><img class="img-responsive top" src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin-under.png" style=" border-radius: px" /></div><img class="img-responsive " src="http://davidsiaw.github.io/weaver-docs/v0.2.2/images/kagamin.png" style=" border-radius: px" />
 		</div>
 
 	</div>
@@ -289,10 +284,10 @@ text "User"</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Syntax Highlighting</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code10">syntax :javascript do
 	content <<-SOME_CODE
 function a()
@@ -302,7 +297,7 @@ function a()
 SOME_CODE
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code11">function a()
 {
 	return 0;
@@ -315,8 +310,8 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are different page templates to choose from</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>All page templates are responsive</p><h3>Structureless pages</h3><p>Structureless pages allow you to directly write content</p><textarea id="code12">empty_page "Empty Page Template" do
 	p "In this template, there no navigation bar and no structure. This is the most basic kind of page"
 
@@ -373,8 +368,8 @@ end</textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/examples/si
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are different preset partition schemes too</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><textarea id="code18">topnav_page "Partitions" do
 
 	header do
@@ -415,10 +410,10 @@ end</textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/examples/pa
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are buttons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code19">button "Original Html Button"; br
 normal_button nil, "Normal Button"; br
 block_button nil, "Block Button"; br
@@ -432,8 +427,8 @@ rounded_button nil, "Rounded Button"; br
 circle_button :user, ""; br
 </textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<button>Original Html Button</button><br  /><button type="button" class="btn btn-primary    " id="">Normal Button</button><br  /><button type="button" class="btn btn-primary  btn-block  " id="">Block Button</button><br  /><button type="button" class="btn btn-primary   btn-outline " id="">Outline Button</button><br  /><button type="button" class="btn btn-primary btn-lg   " id="">Big Button</button><br  /><button type="button" class="btn btn-primary btn-sm   " id="">Small Button</button><br  /><button type="button" class="btn btn-primary btn-xs   " id=""><i class="fa fa-user"></i> </button><br  /><button type="button" class="btn btn-primary    dim" id="">Embossed Button</button><br  /><button type="button" class="btn btn-primary    dim btn-large-dim" id=""><i class="fa fa-user"></i> </button><br  /><button type="button" class="btn btn-primary    btn-rounded" id="">Rounded Button</button><br  /><button type="button" class="btn btn-primary    btn-circle" id=""><i class="fa fa-user"></i> </button><br  />
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<button type="button" class="btn btn-primary    ">Original Html Button</button><br  /><normal_button  /><br  /><button type="button" class="btn btn-primary  btn-block  ">Block Button</button><br  /><button type="button" class="btn btn-primary   btn-outline ">Outline Button</button><br  /><button type="button" class="btn btn-primary btn-lg   ">Big Button</button><br  /><button type="button" class="btn btn-primary btn-sm   ">Small Button</button><br  /><button type="button" class="btn btn-primary btn-xs   "><i class="fa fa-user"></i> </button><br  /><button type="button" class="btn btn-primary    dim">Embossed Button</button><br  /><button type="button" class="btn btn-primary    dim btn-large-dim"><i class="fa fa-user"></i> </button><br  /><button type="button" class="btn btn-primary    btn-rounded">Rounded Button</button><br  /><button type="button" class="btn btn-primary    btn-circle"><i class="fa fa-user"></i> </button><br  />
 		</div>
 
 	</div>
@@ -441,10 +436,10 @@ circle_button :user, ""; br
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are various types of panels available</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code20">ibox do
 	type :panel
 	title "Panel"
@@ -487,7 +482,7 @@ ibox do
 	p "Some content"
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="panel panel-default"><div class="panel-heading"><h5>Panel</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-primary"><div class="panel-heading"><h5>Primary</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-success"><div class="panel-heading"><h5>Success</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-info"><div class="panel-heading"><h5>Info</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-warning"><div class="panel-heading"><h5>Warning</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-danger"><div class="panel-heading"><h5>Danger</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel blank-panel"><div class="panel-heading"><h5>Blank</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div>
 		</div>
 
@@ -496,15 +491,15 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Jumbotron</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code21">jumbotron do
 	h2 "Jumbotron"
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="jumbotron" style=""><h2>Jumbotron</h2></div>
 		</div>
 
@@ -513,10 +508,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Widgets</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code22">widget color: :"gray" do
 	p "gray"
 end
@@ -544,7 +539,7 @@ widget color: :"black" do
 	p "black", style: "color:white"
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="widget style1 gray-bg"><p>gray</p></div><div class="widget style1 gray-bg"><div class="widget style1 white-bg"><p>white</p></div></div><div class="widget style1 navy-bg"><p>navy</p></div><div class="widget style1 blue-bg"><p>blue</p></div><div class="widget style1 lazur-bg"><p>lazur</p></div><div class="widget style1 yellow-bg"><p>yellow</p></div><div class="widget style1 red-bg"><p>red</p></div><div class="widget style1 black-bg"><p style="color:white">black</p></div>
 		</div>
 
@@ -553,10 +548,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is easy to make tabs</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code23">tabs do
 	tab "Dog" do
 		p "Woof" 
@@ -569,7 +564,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="tabs-container"><div class="tabs-normal"><ul class="nav nav-tabs"><li class="active"><a data-toggle="tab" href="#tab0">Dog</a></li><li class=""><a data-toggle="tab" href="#tab1">Cat</a></li><li class=""><a data-toggle="tab" href="#tab2">Duck</a></li></ul><div class="tab-content"><div id="tab0" class="tab-pane active"><div class="panel-body"><p>Woof</p></div></div><div id="tab1" class="tab-pane"><div class="panel-body"><p>Meow</p></div></div><div id="tab2" class="tab-pane"><div class="panel-body"><p>Quack</p></div></div></div></div></div>
 		</div>
 
@@ -578,10 +573,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are two other possible orientations</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>There is <code>:left</code> and <code>:right</code></p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code24">tabs do
 	orientation :left
 	tab "Dog" do
@@ -595,7 +590,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="tabs-container"><div class="tabs-left"><ul class="nav nav-tabs"><li class="active"><a data-toggle="tab" href="#tab3">Dog</a></li><li class=""><a data-toggle="tab" href="#tab4">Cat</a></li><li class=""><a data-toggle="tab" href="#tab5">Duck</a></li></ul><div class="tab-content"><div id="tab3" class="tab-pane active"><div class="panel-body"><p>Woof</p></div></div><div id="tab4" class="tab-pane"><div class="panel-body"><p>Meow</p></div></div><div id="tab5" class="tab-pane"><div class="panel-body"><p>Quack</p></div></div></div></div></div>
 		</div>
 
@@ -604,10 +599,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is also possible to use icons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code25">tabs do
 	tab :automobile do
 		p "Car" 
@@ -620,7 +615,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="tabs-container"><div class="tabs-normal"><ul class="nav nav-tabs"><li class="active"><a data-toggle="tab" href="#tab6"><i class="fa fa-automobile"></i></a></li><li class=""><a data-toggle="tab" href="#tab7"><i class="fa fa-train"></i></a></li><li class=""><a data-toggle="tab" href="#tab8"><i class="fa fa-bus"></i></a></li></ul><div class="tab-content"><div id="tab6" class="tab-pane active"><div class="panel-body"><p>Car</p></div></div><div id="tab7" class="tab-pane"><div class="panel-body"><p>Subway</p></div></div><div id="tab8" class="tab-pane"><div class="panel-body"><p>Bus</p></div></div></div></div></div>
 		</div>
 
@@ -629,10 +624,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is also possible to use an accordion</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code26">accordion do
 	tab "Dog" do
 		p "Woof" 
@@ -645,7 +640,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="panel-group" id="accordion0"><div class="panel panel-default"><div class="panel-heading"><h5><div class="panel-title"><a data-toggle="collapse" data-parent="#accordion0" href="#tab9">Dog</a></div></h5><div class="ibox-tools"></div></div><div id="tab9" class="panel-collapse collapse in"><div class="panel-body"><p>Woof</p></div></div></div><div class="panel panel-default"><div class="panel-heading"><h5><div class="panel-title"><a data-toggle="collapse" data-parent="#accordion0" href="#tab10">Cat</a></div></h5><div class="ibox-tools"></div></div><div id="tab10" class="panel-collapse collapse"><div class="panel-body"><p>Meow</p></div></div></div><div class="panel panel-default"><div class="panel-heading"><h5><div class="panel-title"><a data-toggle="collapse" data-parent="#accordion0" href="#tab11">Duck</a></div></h5><div class="ibox-tools"></div></div><div id="tab11" class="panel-collapse collapse"><div class="panel-body"><p>Quack</p></div></div></div></div>
 		</div>
 
@@ -654,10 +649,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Tables can also be made the standard way</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code27">table do
 	thead do
 		th { text "Name" }
@@ -677,7 +672,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table" id="table0" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
@@ -686,10 +681,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Bordered style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can mix and match styles</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code28">table bordered: true do
 	thead do
 		th { text "Name" }
@@ -709,7 +704,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table table-bordered" id="table1" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
@@ -718,10 +713,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Hover style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code29">table hover: true do
 	thead do
 		th { text "Name" }
@@ -741,7 +736,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table table-hover" id="table2" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
@@ -750,10 +745,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Striped style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code30">table striped: true do
 	thead do
 		th { text "Name" }
@@ -773,7 +768,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table table-striped" id="table3" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
@@ -782,10 +777,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Data Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Data table JQuery plugin</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code31">table system: :data_table do
 	thead do
 		th { text "Name" }
@@ -805,7 +800,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table" id="table4" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table>
 		</div>
 
@@ -814,10 +809,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Foo Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Foo Table plugin</p>	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code32">table system: :foo_table do
 	thead do
 		th { text "Name" }
@@ -849,7 +844,7 @@ end</textarea>
 	end
 end</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table toggle-arrow-tiny" id="table5" style=""><thead><th>Name</th><th>Class</th><th data-hide="all">Info</th><th data-hide="all">Power</th></thead><tr><td>Haruhi</td><td>2-B</td><td>Uninterested in humans</td><td>Reality change</td></tr><tr><td>Kyon</td><td>2-B</td><td>Is the real God</td><td>Control over Haruhi</td></tr><tr><td>Mikuru</td><td>3-A</td><td>Classified information</td><td>Classified information</td></tr></table>
 		</div>
 
@@ -858,10 +853,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can make also tables easily from an array of Hashes</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code33">table_from_hashes [
 	{name: "Haruhi", age: 17},
 	{name: "Mikuru", age: 18},
@@ -871,7 +866,7 @@ end</textarea>
 	{name: "Tsuruya", age: 18}
 ]</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table" id="table6" style=""><thead><th>name</th><th>age</th></thead><tbody><tr><td>Haruhi</td><td>17</td></tr><tr><td>Mikuru</td><td>18</td></tr><tr><td>Kyon</td><td>17</td></tr><tr><td>Nagato</td><td>17</td></tr><tr><td>Itsuki</td><td>17</td></tr><tr><td>Tsuruya</td><td>18</td></tr></tbody></table>
 		</div>
 
@@ -880,10 +875,10 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can also use the styles available to tables</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<textarea id="code34">table_from_hashes [
 	{name: "Haruhi", age: 17, class: "2-B"},
 	{name: "Mikuru", age: 18, class: "3-A"},
@@ -893,7 +888,7 @@ end</textarea>
 	{name: "Tsuruya", age: 18, class: "3-A"}
 ], bordered: true, striped: true</textarea>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table class="table table-bordered table-striped" id="table7" style=""><thead><th>name</th><th>age</th><th>class</th></thead><tbody><tr><td>Haruhi</td><td>17</td><td>2-B</td></tr><tr><td>Mikuru</td><td>18</td><td>3-A</td></tr><tr><td>Kyon</td><td>17</td><td>2-B</td></tr><tr><td>Nagato</td><td>17</td><td>2-A</td></tr><tr><td>Itsuki</td><td>17</td><td>2-C</td></tr><tr><td>Tsuruya</td><td>18</td><td>3-A</td></tr></tbody></table>
 		</div>
 
@@ -902,8 +897,8 @@ end</textarea>
 		</div>
 
 	</div>
-	<div class="row " style="">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Describing multiple pages in one weave file</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>It is possible to describe multiple pages in one weave file. Simply pass it two arguments, the first being the path of the page, and the second the title of the page</p><textarea id="code35">center_page "Multi-page example" do
 	ibox do
 		h2 "Hello world!"
@@ -936,7 +931,6 @@ end</textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/examples/mu
 		</div>
 	</div>
 
-</div>
 
     <!-- Mainly scripts -->
     <script src="js/jquery-2.1.1.js"></script>
@@ -962,6 +956,21 @@ end</textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/examples/mu
     <script src="js/plugins/footable/footable.all.min.js"></script>
 
 
+    <!-- blueimp gallery -->
+    <script src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+
+    <style>
+        /* Local style for demo purpose */
+
+        .lightBoxGallery {
+            text-align: center;
+        }
+
+        .lightBoxGallery img {
+            margin: 5px;
+        }
+
+    </style>
 
 
     <!-- Custom and plugin javascript -->
@@ -1226,14 +1235,17 @@ end</textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.2/examples/mu
 	    });
 
 
-
-$( document ).ready(function() {
-
-
-
-});
     </script>
 
+    <div id="blueimp-gallery" class="blueimp-gallery">
+                                <div class="slides"></div>
+                                <h3 class="title"></h3>
+                                <a class="prev">‹</a>
+                                <a class="next">›</a>
+                                <a class="close">×</a>
+                                <a class="play-pause"></a>
+                                <ol class="indicator"></ol>
+                            </div>
     
 
 </body>

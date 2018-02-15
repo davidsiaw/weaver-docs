@@ -2337,9 +2337,7 @@ label.error {
   margin-left: 5px;
 }
 .form-control.error {
-    background: rgb(251, 227, 228);
-    border: 1px solid #fbc2c4;
-    color: #8a1f11;
+  border: 1px dotted #cc5965;
 }
 /* ngGrid */
 .gridStyle {
