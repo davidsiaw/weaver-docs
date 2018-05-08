@@ -64,7 +64,7 @@
 	            <div class="container">
 	<div class="row wrapper border-bottom white-bg page-heading" style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<h2>Welcome to Weaver</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
+			<h2>Welcome to Weaver 0.3.1</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
 		</div>
 
 	</div>
@@ -135,13 +135,133 @@ end</textarea>
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Dynamic tables take json information from a URL and displays it in table form</p><textarea id="code2">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Form elements with default values (refresh to reset)</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+			<textarea id="code2">wform do
+	textfield "service_name", "Service Name", value: "google"
+
+	radio "options", [
+		{label:"Option 1",value:"x1"}, 
+		{label:"Option 2",value:"x3"}, 
+		{label:"Option 3",value:"x5"}
+	], value: "x5"
+
+	dropdown "cities", "Select City", [
+		"Tokyo",
+		"London",
+		"Paris",
+		"Berlin",
+		"New York"
+	], value: "London"
+
+	submit "See form contents" do
+		script "alert(JSON.stringify(data));" 
+	end
+
+end</textarea>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+			<form id="form1" role="form"><div class="form-group"><label>Service Name</label><input type="text" placeholder="" id="textfield3" name="service_name" rows="" class="form-control" autocomplete="on" autocorrect="on" autocapitalize="off" /></div><div class="i-checks"><label><input checked="" type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label><input type="radio" value="x5" name="options"> Option 3</input></label></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select value="London" class="form-control" name="cities" id="select2" placeholder=" "><option>Tokyo</option><option>London</option><option>Paris</option><option>Berlin</option><option>New York</option></select></div></div><button type="submit" class="btn btn-primary    " id="" onclick="action2(this, get_form1_object()); return false;">See form contents</button></form>
+		</div>
+
+	</div>
+</div></div>
+		</div>
+
+	</div>
+	<div class="row " style="">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Customizing submit button</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+			<textarea id="code3">wform do
+
+	hiddenfield "name", "Mewtwo"
+
+	submit "Normal" do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	submit "Block version", block:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit "Outline version", outline:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit "3D version", threedee:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit :ambulance, bigthreedee:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit "Words", rounded:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit :user, circle:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+end</textarea>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+			<form id="form2" role="form"><hiddenfield /><button type="submit" class="btn btn-primary    " id="" onclick="action3(this, get_form2_object()); return false;">Normal</button><button type="submit" class="btn btn-primary  btn-block  " id="" onclick="action4(this, get_form2_object()); return false;">Block version</button><br  /><button type="submit" class="btn btn-primary   btn-outline " id="" onclick="action5(this, get_form2_object()); return false;">Outline version</button><br  /><button type="submit" class="btn btn-primary    dim" id="" onclick="action6(this, get_form2_object()); return false;">3D version</button><br  /><button type="submit" class="btn btn-primary    dim btn-large-dim" id="" onclick="action7(this, get_form2_object()); return false;"><i class="fa fa-ambulance"></i></button><br  /><button type="submit" class="btn btn-primary    btn-rounded" id="" onclick="action8(this, get_form2_object()); return false;">Words</button><br  /><button type="submit" class="btn btn-primary    btn-circle" id="" onclick="action9(this, get_form2_object()); return false;"><i class="fa fa-user"></i></button></form>
+		</div>
+
+	</div>
+</div></div>
+		</div>
+
+	</div>
+	<div class="row " style="">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Radio buttons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+			<textarea id="code4">wform do
+
+	radio "options", [
+		{label:"Option 1",value:"x1"}, 
+		{label:"Option 2",value:"x3"}, 
+		{label:"Option 3",value:"x5"}
+	], value: "x5", form: :button
+
+	submit "See form contents" do
+		script "alert(JSON.stringify(data));" 
+	end
+
+end</textarea>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
+			<form id="form3" role="form"><div class="i-checks"><label><input checked="" type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label><input type="radio" value="x5" name="options"> Option 3</input></label></div><button type="submit" class="btn btn-primary    " id="" onclick="action10(this, get_form3_object()); return false;">See form contents</button></form>
+		</div>
+
+	</div>
+</div></div>
+		</div>
+
+	</div>
+	<div class="row " style="">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Dynamic tables take json information from a URL and displays it in table form</p><textarea id="code5">raw_page do
 	h = {name: "haruka", age: "17", color: "red"}
 	text h.to_json
 end
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1/examples/data1/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<textarea id="code3">table_from_source "../examples/data1/"</textarea>
+			<textarea id="code6">table_from_source "../examples/data1/"</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
 			<table class="table" id="dyn_table0" style=""><thead id="dyn_table0_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table0_body"></tbody></table>
@@ -154,7 +274,7 @@ end
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with an array</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>If the input is an array it will attempt to display all the information in that array</p><textarea id="code4">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with an array</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>If the input is an array it will attempt to display all the information in that array</p><textarea id="code7">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -170,7 +290,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<textarea id="code5">table_from_source "../examples/data2/"</textarea>
+			<textarea id="code8">table_from_source "../examples/data2/"</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
 			<table class="table" id="dyn_table1" style=""><thead id="dyn_table1_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table1_body"></tbody></table>
@@ -183,7 +303,7 @@ end
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the columns that you want to show</p><textarea id="code6">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the columns that you want to show</p><textarea id="code9">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -199,7 +319,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<textarea id="code7">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea>
+			<textarea id="code10">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
 			<table class="table" id="dyn_table2" style=""><thead id="dyn_table2_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table2_body"></tbody></table>
@@ -212,7 +332,7 @@ end
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code8">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code11">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -228,7 +348,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<textarea id="code9">table_from_source "../examples/data2/" do
+			<textarea id="code12">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age"
 end</textarea>
@@ -244,7 +364,7 @@ end</textarea>
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with icon columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code10">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with icon columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code13">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -260,7 +380,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<textarea id="code11">table_from_source "../examples/data2/" do
+			<textarea id="code14">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar
 end</textarea>
@@ -276,7 +396,7 @@ end</textarea>
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with custom columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the what the cells of each column looks like too.</p><p>The ###something### is replaced with the name of the member inside the object</p><textarea id="code12">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with custom columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the what the cells of each column looks like too.</p><p>The ###something### is replaced with the name of the member inside the object</p><textarea id="code15">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red", inv_color:"white"},
 		{name: "chihaya", age: "17", color: "blue", inv_color:"white"},
@@ -298,7 +418,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1/examples/data3/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<textarea id="code13">table_from_source "../examples/data3/" do
+			<textarea id="code16">table_from_source "../examples/data3/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar 
 	column "color", title: "Idol Color", icon: :eye do
@@ -317,7 +437,7 @@ end</textarea>
 	</div>
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with buttons that access row data</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can create data buttons that can access the row data and allow you to access the information on the row</p><textarea id="code14">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with buttons that access row data</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can create data buttons that can access the row data and allow you to access the information on the row</p><textarea id="code17">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -333,7 +453,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.3.1/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-			<textarea id="code15">table_from_source "../examples/data2/" do
+			<textarea id="code18">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar
 	column "button", title: "Button" do 
@@ -442,9 +562,93 @@ function get_form0_object()
 			);
 	    });
 
+function action2(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function get_form1_object()
+{
+	var object = {}
+	object["service_name"] = $('#textfield3').val();
+
+	object["options"] = $('input[name=options]:checked', '#form1').val()
+
+	object["cities"] = $( "#select2 option:selected" ).text();
+
+	return object;
+}
+
 		$(document).ready(function()
 		{
 			CodeMirror.fromTextArea(document.getElementById("code3"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+function action3(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function action4(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function action5(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function action6(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function action7(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function action8(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function action9(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function get_form2_object()
+{
+	var object = {}
+
+	return object;
+}
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code4"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+function action10(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function get_form3_object()
+{
+	var object = {}
+	object["options"] = $('input[name=options]:checked', '#form3').val()
+
+	return object;
+}
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code5"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code6"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -556,14 +760,14 @@ function get_form0_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code4"), 
+			CodeMirror.fromTextArea(document.getElementById("code7"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code5"), 
+			CodeMirror.fromTextArea(document.getElementById("code8"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -675,14 +879,14 @@ function get_form0_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code6"), 
+			CodeMirror.fromTextArea(document.getElementById("code9"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code7"), 
+			CodeMirror.fromTextArea(document.getElementById("code10"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -794,14 +998,14 @@ function get_form0_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code8"), 
+			CodeMirror.fromTextArea(document.getElementById("code11"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code9"), 
+			CodeMirror.fromTextArea(document.getElementById("code12"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -913,14 +1117,14 @@ function get_form0_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code10"), 
+			CodeMirror.fromTextArea(document.getElementById("code13"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code11"), 
+			CodeMirror.fromTextArea(document.getElementById("code14"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -1032,14 +1236,14 @@ function get_form0_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code12"), 
+			CodeMirror.fromTextArea(document.getElementById("code15"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code13"), 
+			CodeMirror.fromTextArea(document.getElementById("code16"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
@@ -1151,19 +1355,19 @@ function get_form0_object()
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code14"), 
+			CodeMirror.fromTextArea(document.getElementById("code17"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
 		$(document).ready(function()
 		{
-			CodeMirror.fromTextArea(document.getElementById("code15"), 
+			CodeMirror.fromTextArea(document.getElementById("code18"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
 
-function action2(caller, data) {
+function action11(caller, data) {
 	alert(JSON.stringify(data))
 }
 
@@ -1202,7 +1406,7 @@ function action2(caller, data) {
 			if ($.isArray(data_object))
 			{
 
-				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" id=\\\"\\\" onclick=\\\"action2(this, $(this).closest('td').data('object'))\\\">###name###</button>\"}]");
+				var columnData = JSON.parse("[{\"name\":\"name\",\"title\":\"Idol Name\",\"format\":null},{\"name\":\"age\",\"title\":\"<i class=\\\"fa fa-calendar\\\"></i> Idol Age\",\"format\":null},{\"name\":\"button\",\"title\":\"Button\",\"format\":\"<button type=\\\"button\\\" class=\\\"btn btn-primary    \\\" id=\\\"\\\" onclick=\\\"action11(this, $(this).closest('td').data('object'))\\\">###name###</button>\"}]");
 				var columns = {};
 				var columnTitles = [];
 				head.empty();

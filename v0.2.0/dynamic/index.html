@@ -55,7 +55,7 @@
 	            <div class="container">
 	<div class="row wrapper border-bottom white-bg page-heading">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<h2>Welcome to Weaver</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
+			<h2>Welcome to Weaver 0.2.0</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
 		</div>
 
 	</div>
@@ -126,13 +126,133 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Dynamic tables take json information from a URL and displays it in table form</p><textarea id="code2">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Form elements with default values (refresh to reset)</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<textarea id="code2">wform do
+	textfield "service_name", "Service Name", value: "google"
+
+	radio "options", [
+		{label:"Option 1",value:"x1"}, 
+		{label:"Option 2",value:"x3"}, 
+		{label:"Option 3",value:"x5"}
+	], value: "x5"
+
+	dropdown "cities", "Select City", [
+		"Tokyo",
+		"London",
+		"Paris",
+		"Berlin",
+		"New York"
+	], value: "London"
+
+	submit "See form contents" do
+		script "alert(JSON.stringify(data));" 
+	end
+
+end</textarea>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<wform><textfield /><radio /><dropdown /><submit><script>alert(JSON.stringify(data));</script></submit></wform>
+		</div>
+
+	</div>
+</div></div>
+		</div>
+
+	</div>
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Customizing submit button</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<textarea id="code3">wform do
+
+	hiddenfield "name", "Mewtwo"
+
+	submit "Normal" do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	submit "Block version", block:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit "Outline version", outline:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit "3D version", threedee:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit :ambulance, bigthreedee:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit "Words", rounded:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+	br
+
+	submit :user, circle:true do
+		script "alert(JSON.stringify(data));" 
+	end
+
+end</textarea>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<wform><hiddenfield /><submit><script>alert(JSON.stringify(data));</script></submit><submit block="true"><script>alert(JSON.stringify(data));</script></submit><br  /><submit outline="true"><script>alert(JSON.stringify(data));</script></submit><br  /><submit threedee="true"><script>alert(JSON.stringify(data));</script></submit><br  /><submit /><br  /><submit rounded="true"><script>alert(JSON.stringify(data));</script></submit><br  /><submit /></wform>
+		</div>
+
+	</div>
+</div></div>
+		</div>
+
+	</div>
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Radio buttons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px">	<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<textarea id="code4">wform do
+
+	radio "options", [
+		{label:"Option 1",value:"x1"}, 
+		{label:"Option 2",value:"x3"}, 
+		{label:"Option 3",value:"x5"}
+	], value: "x5", form: :button
+
+	submit "See form contents" do
+		script "alert(JSON.stringify(data));" 
+	end
+
+end</textarea>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+			<wform><radio /><submit><script>alert(JSON.stringify(data));</script></submit></wform>
+		</div>
+
+	</div>
+</div></div>
+		</div>
+
+	</div>
+	<div class="row ">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Dynamic tables take json information from a URL and displays it in table form</p><textarea id="code5">raw_page do
 	h = {name: "haruka", age: "17", color: "red"}
 	text h.to_json
 end
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0/examples/data1/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code3">table_from_source "../examples/data1/"</textarea>
+			<textarea id="code6">table_from_source "../examples/data1/"</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table_from_source>../examples/data1/</table_from_source>
@@ -145,7 +265,7 @@ end
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with an array</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>If the input is an array it will attempt to display all the information in that array</p><textarea id="code4">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with an array</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>If the input is an array it will attempt to display all the information in that array</p><textarea id="code7">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -161,7 +281,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code5">table_from_source "../examples/data2/"</textarea>
+			<textarea id="code8">table_from_source "../examples/data2/"</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table_from_source>../examples/data2/</table_from_source>
@@ -174,7 +294,7 @@ end
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the columns that you want to show</p><textarea id="code6">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the columns that you want to show</p><textarea id="code9">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -190,7 +310,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code7">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea>
+			<textarea id="code10">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<table_from_source columns="["name", "color"]">../examples/data2/</table_from_source>
@@ -203,7 +323,7 @@ end
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code8">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with named columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code11">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -219,7 +339,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code9">table_from_source "../examples/data2/" do
+			<textarea id="code12">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age"
 end</textarea>
@@ -235,7 +355,7 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with icon columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code10">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with icon columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the header looks too</p><textarea id="code13">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -251,7 +371,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code11">table_from_source "../examples/data2/" do
+			<textarea id="code14">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar
 end</textarea>
@@ -267,7 +387,7 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with custom columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the what the cells of each column looks like too.</p><p>The ###something### is replaced with the name of the member inside the object</p><textarea id="code12">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with custom columns</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can specify the what the cells of each column looks like too.</p><p>The ###something### is replaced with the name of the member inside the object</p><textarea id="code15">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red", inv_color:"white"},
 		{name: "chihaya", age: "17", color: "blue", inv_color:"white"},
@@ -289,7 +409,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0/examples/data3/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code13">table_from_source "../examples/data3/" do
+			<textarea id="code16">table_from_source "../examples/data3/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar 
 	column "color", title: "Idol Color", icon: :eye do
@@ -308,7 +428,7 @@ end</textarea>
 	</div>
 	<div class="row ">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with buttons that access row data</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can create data buttons that can access the row data and allow you to access the information on the row</p><textarea id="code14">raw_page do
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Dynamic Table with buttons that access row data</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can create data buttons that can access the row data and allow you to access the information on the row</p><textarea id="code17">raw_page do
 	h = [
 		{name: "haruka", age: "17", color: "red"},
 		{name: "chihaya", age: "17", color: "blue"},
@@ -324,7 +444,7 @@ end
 
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/v0.2.0/examples/data2/">See it in action</a>	<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-			<textarea id="code15">table_from_source "../examples/data2/" do
+			<textarea id="code18">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar
 	column "button", title: "Button" do 
@@ -492,6 +612,27 @@ end</textarea>
 		$(document).ready(function()
 		{
 			CodeMirror.fromTextArea(document.getElementById("code15"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code16"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code17"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code18"), 
 				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
 			);
 	    });
