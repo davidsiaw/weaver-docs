@@ -272,7 +272,7 @@ function SmoothlyMenu() {
     }
 }
 
-// Dragable panels
+// Draggable panels
 function WinMove() {
     var element = "[class*=col]";
     var handle = ".ibox-title";
@@ -283,9 +283,12 @@ function WinMove() {
             connectWith: connect,
             tolerance: 'pointer',
             forcePlaceholderSize: true,
-            opacity: 0.8
+            opacity: 0.7
         })
         .disableSelection();
 }
 
-
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
