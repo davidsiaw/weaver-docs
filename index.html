@@ -41,7 +41,7 @@
 </div>
 
 <div id="content" style="z-index: 0">
-		<a href="https://github.com/davidsiaw/weaver"><img style="position: absolute; z-index: 100; top: 50px; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    <a href="https://github.com/davidsiaw/weaver"><img style="position: absolute; z-index: 100; top: 50px; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
 	<div id="wrapper">
 
@@ -166,9 +166,9 @@ span "red ", style:"color:red"</textarea></div><div class="col-xs-12 col-sm-12 c
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can also wrap content in another tag</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>This is the same as doing it in HTML. Instead of passing it a string, you use a block</p><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code4">h3 style:"text-decoration:underline" do
-	span "Some text "
-	span "colored ", style:"color:blue"
-	span "red ", style:"color:red"
+  span "Some text "
+  span "colored ", style:"color:blue"
+  span "red ", style:"color:red"
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><h3 style="text-decoration:underline"><span>Some text </span><span style="color:blue">colored </span><span style="color:red">red </span></h3></div></div></div></div>
 		</div>
 
@@ -176,14 +176,14 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>This works for all tags</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Like lists:</p><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code5">ul do
-	li { text "Haruhi" }
-	li { text "Kyon" }
-	li { text "Itsuki" }
+  li { text "Haruhi" }
+  li { text "Kyon" }
+  li { text "Itsuki" }
 end
  ol do
-	li { text "Nagato" }
-	li { text "Mikuru" }
-	li { text "Tsuruya" }
+  li { text "Nagato" }
+  li { text "Mikuru" }
+  li { text "Tsuruya" }
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><ul><li>Haruhi</li><li>Kyon</li><li>Itsuki</li></ul><ol><li>Nagato</li><li>Mikuru</li><li>Tsuruya</li></ol></div></div></div><div class="ibox-footer"><code>text</code> is a special tag to mean 'there are no tags', just plain html</div></div>
 		</div>
 
@@ -296,15 +296,15 @@ end
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Syntax Highlighting</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code16">syntax :javascript do
-	content <<-SOME_CODE
-function a()
-{
-	return 0;
-}
-SOME_CODE
+  content <<~SOME_CODE
+    function a()
+    {
+      return 0;
+    }
+  SOME_CODE
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code17">function a()
 {
-	return 0;
+  return 0;
 }
 </textarea></div></div></div></div>
 		</div>
@@ -514,39 +514,39 @@ circle_button :user, ""; br
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are various types of panels available</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code28">ibox do
-	type :panel
-	title "Panel"
-	p "Some content"
+  type :panel
+  title "Panel"
+  p "Some content"
 end
  ibox do
-	type :primary
-	title "Primary"
-	p "Some content"
+  type :primary
+  title "Primary"
+  p "Some content"
 end
  ibox do
-	type :success
-	title "Success"
-	p "Some content"
+  type :success
+  title "Success"
+  p "Some content"
 end
  ibox do
-	type :info
-	title "Info"
-	p "Some content"
+  type :info
+  title "Info"
+  p "Some content"
 end
  ibox do
-	type :warning
-	title "Warning"
-	p "Some content"
+  type :warning
+  title "Warning"
+  p "Some content"
 end
  ibox do
-	type :danger
-	title "Danger"
-	p "Some content"
+  type :danger
+  title "Danger"
+  p "Some content"
 end
  ibox do
-	type :blank
-	title "Blank"
-	p "Some content"
+  type :blank
+  title "Blank"
+  p "Some content"
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="panel panel-default"><div class="panel-heading"><h5>Panel</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-primary"><div class="panel-heading"><h5>Primary</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-success"><div class="panel-heading"><h5>Success</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-info"><div class="panel-heading"><h5>Info</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-warning"><div class="panel-heading"><h5>Warning</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel panel-danger"><div class="panel-heading"><h5>Danger</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div><div class="panel blank-panel"><div class="panel-heading"><h5>Blank</h5><div class="ibox-tools"></div></div><div class="panel-body" style="min-height: px"><p>Some content</p></div></div></div></div></div></div>
 		</div>
 
@@ -554,7 +554,7 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Jumbotron</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code29">jumbotron do
-	h2 "Jumbotron"
+  h2 "Jumbotron"
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="jumbotron" style=""><h2>Jumbotron</h2></div></div></div></div></div>
 		</div>
 
@@ -562,30 +562,30 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Widgets</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code30">widget color: :"gray" do
-	p "gray"
+  p "gray"
 end
 widget color: :"gray" do
-	widget color: :"white" do
-		p "white"
-	end
+  widget color: :"white" do
+    p "white"
+  end
 end
 widget color: :"navy" do
-	p "navy"
+  p "navy"
 end
 widget color: :"blue" do
-	p "blue"
+  p "blue"
 end
 widget color: :"lazur" do
-	p "lazur"
+  p "lazur"
 end
 widget color: :"yellow" do
-	p "yellow"
+  p "yellow"
 end
 widget color: :"red" do
-	p "red"
+  p "red"
 end
 widget color: :"black" do
-	p "black", style: "color:white"
+  p "black", style: "color:white"
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="widget style1 gray-bg"><p>gray</p></div><div class="widget style1 gray-bg"><div class="widget style1 white-bg"><p>white</p></div></div><div class="widget style1 navy-bg"><p>navy</p></div><div class="widget style1 blue-bg"><p>blue</p></div><div class="widget style1 lazur-bg"><p>lazur</p></div><div class="widget style1 yellow-bg"><p>yellow</p></div><div class="widget style1 red-bg"><p>red</p></div><div class="widget style1 black-bg"><p style="color:white">black</p></div></div></div></div></div>
 		</div>
 
@@ -593,15 +593,15 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is easy to make tabs</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code31">tabs do
-	tab "Dog" do
-		p "Woof"
-	end
-	tab "Cat" do
-		p "Meow"
-	end
-	tab "Duck" do
-		p "Quack"
-	end
+  tab "Dog" do
+    p "Woof"
+  end
+  tab "Cat" do
+    p "Meow"
+  end
+  tab "Duck" do
+    p "Quack"
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="tabs-container"><div class="tabs-normal"><ul class="nav nav-tabs"><li class="active"><a data-toggle="tab" href="#tab0">Dog</a></li><li class=""><a data-toggle="tab" href="#tab1">Cat</a></li><li class=""><a data-toggle="tab" href="#tab2">Duck</a></li></ul><div class="tab-content"><div id="tab0" class="tab-pane active"><div class="panel-body"><p>Woof</p></div></div><div id="tab1" class="tab-pane"><div class="panel-body"><p>Meow</p></div></div><div id="tab2" class="tab-pane"><div class="panel-body"><p>Quack</p></div></div></div></div></div></div></div></div></div>
 		</div>
 
@@ -609,16 +609,16 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>There are two other possible orientations</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>There is <code>:left</code> and <code>:right</code></p><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code32">tabs do
-	orientation :left
-	tab "Dog" do
-		p "Woof"
-	end
-	tab "Cat" do
-		p "Meow"
-	end
-	tab "Duck" do
-		p "Quack"
-	end
+  orientation :left
+  tab "Dog" do
+    p "Woof"
+  end
+  tab "Cat" do
+    p "Meow"
+  end
+  tab "Duck" do
+    p "Quack"
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="tabs-container"><div class="tabs-left"><ul class="nav nav-tabs"><li class="active"><a data-toggle="tab" href="#tab3">Dog</a></li><li class=""><a data-toggle="tab" href="#tab4">Cat</a></li><li class=""><a data-toggle="tab" href="#tab5">Duck</a></li></ul><div class="tab-content"><div id="tab3" class="tab-pane active"><div class="panel-body"><p>Woof</p></div></div><div id="tab4" class="tab-pane"><div class="panel-body"><p>Meow</p></div></div><div id="tab5" class="tab-pane"><div class="panel-body"><p>Quack</p></div></div></div></div></div></div></div></div></div>
 		</div>
 
@@ -626,15 +626,15 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is also possible to use icons</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code33">tabs do
-	tab :automobile do
-		p "Car"
-	end
-	tab :train do
-		p "Subway"
-	end
-	tab :bus do
-		p "Bus"
-	end
+  tab :automobile do
+    p "Car"
+  end
+  tab :train do
+    p "Subway"
+  end
+  tab :bus do
+    p "Bus"
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="tabs-container"><div class="tabs-normal"><ul class="nav nav-tabs"><li class="active"><a data-toggle="tab" href="#tab6"><i class="fa fa-automobile"></i></a></li><li class=""><a data-toggle="tab" href="#tab7"><i class="fa fa-train"></i></a></li><li class=""><a data-toggle="tab" href="#tab8"><i class="fa fa-bus"></i></a></li></ul><div class="tab-content"><div id="tab6" class="tab-pane active"><div class="panel-body"><p>Car</p></div></div><div id="tab7" class="tab-pane"><div class="panel-body"><p>Subway</p></div></div><div id="tab8" class="tab-pane"><div class="panel-body"><p>Bus</p></div></div></div></div></div></div></div></div></div>
 		</div>
 
@@ -642,15 +642,15 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>It is also possible to use an accordion</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code34">accordion do
-	tab "Dog" do
-		p "Woof"
-	end
-	tab "Cat" do
-		p "Meow"
-	end
-	tab "Duck" do
-		p "Quack"
-	end
+  tab "Dog" do
+    p "Woof"
+  end
+  tab "Cat" do
+    p "Meow"
+  end
+  tab "Duck" do
+    p "Quack"
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="panel-group" id="accordion0"><div class="panel panel-default"><div class="panel-heading"><h5><div class="panel-title"><a data-toggle="collapse" data-parent="#accordion0" href="#tab9">Dog</a></div></h5><div class="ibox-tools"></div></div><div id="tab9" class="panel-collapse collapse in"><div class="panel-body"><p>Woof</p></div></div></div><div class="panel panel-default"><div class="panel-heading"><h5><div class="panel-title"><a data-toggle="collapse" data-parent="#accordion0" href="#tab10">Cat</a></div></h5><div class="ibox-tools"></div></div><div id="tab10" class="panel-collapse collapse"><div class="panel-body"><p>Meow</p></div></div></div><div class="panel panel-default"><div class="panel-heading"><h5><div class="panel-title"><a data-toggle="collapse" data-parent="#accordion0" href="#tab11">Duck</a></div></h5><div class="ibox-tools"></div></div><div id="tab11" class="panel-collapse collapse"><div class="panel-body"><p>Quack</p></div></div></div></div></div></div></div></div>
 		</div>
 
@@ -658,22 +658,22 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Tables can also be made the standard way</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code35">table do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" }
-	end
+  thead do
+    th { text "Name" }
+    th { text "Class" }
+  end
+  tr do
+    td { text "Haruhi" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Kyon" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Mikuru" }
+    td { text "3-A" }
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="table0" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table><ul class="pagination" /></div></div></div></div>
 		</div>
 
@@ -681,22 +681,22 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Bordered style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>You can mix and match styles</p><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code36">table bordered: true do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" }
-	end
+  thead do
+    th { text "Name" }
+    th { text "Class" }
+  end
+  tr do
+    td { text "Haruhi" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Kyon" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Mikuru" }
+    td { text "3-A" }
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table table-bordered" id="table1" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table><ul class="pagination" /></div></div></div></div>
 		</div>
 
@@ -704,22 +704,22 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Hover style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code37">table hover: true do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" }
-	end
+  thead do
+    th { text "Name" }
+    th { text "Class" }
+  end
+  tr do
+    td { text "Haruhi" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Kyon" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Mikuru" }
+    td { text "3-A" }
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table table-hover" id="table2" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table><ul class="pagination" /></div></div></div></div>
 		</div>
 
@@ -727,22 +727,22 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Striped style</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code38">table striped: true do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" }
-	end
+  thead do
+    th { text "Name" }
+    th { text "Class" }
+  end
+  tr do
+    td { text "Haruhi" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Kyon" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Mikuru" }
+    td { text "3-A" }
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table table-striped" id="table3" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table><ul class="pagination" /></div></div></div></div>
 		</div>
 
@@ -750,22 +750,22 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Data Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Data table JQuery plugin</p><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code39">table system: :data_table do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" }
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" }
-	end
+  thead do
+    th { text "Name" }
+    th { text "Class" }
+  end
+  tr do
+    td { text "Haruhi" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Kyon" }
+    td { text "2-B" }
+  end
+  tr do
+    td { text "Mikuru" }
+    td { text "3-A" }
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="table4" style=""><thead><th>Name</th><th>Class</th></thead><tr><td>Haruhi</td><td>2-B</td></tr><tr><td>Kyon</td><td>2-B</td></tr><tr><td>Mikuru</td><td>3-A</td></tr></table><ul class="pagination" /></div></div></div><div class="ibox-footer"><p>Supported systems are :data_table and :foo_table</p></div></div>
 		</div>
 
@@ -773,34 +773,34 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Foo Table</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><p>Foo Table plugin</p><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code40">table system: :foo_table do
-	thead do
-		th { text "Name" }
-		th { text "Class" }
-		th :"data-breakpoints" => :all do
-			text "Info"
-		end
-		th :"data-breakpoints" => :all do
-			text "Power"
-		end
-	end
-	tr do
-		td { text "Haruhi" }
-		td { text "2-B" }
-		td { text "Uninterested in humans" }
-		td { text "Reality change" }
-	end
-	tr do
-		td { text "Kyon" }
-		td { text "2-B" }
-		td { text "Is the real God" }
-		td { text "Control over Haruhi" }
-	end
-	tr do
-		td { text "Mikuru" }
-		td { text "3-A" }
-		td { text "Classified information" }
-		td { text "Classified information" }
-	end
+  thead do
+    th { text "Name" }
+    th { text "Class" }
+    th :"data-breakpoints" => :all do
+      text "Info"
+    end
+    th :"data-breakpoints" => :all do
+      text "Power"
+    end
+  end
+  tr do
+    td { text "Haruhi" }
+    td { text "2-B" }
+    td { text "Uninterested in humans" }
+    td { text "Reality change" }
+  end
+  tr do
+    td { text "Kyon" }
+    td { text "2-B" }
+    td { text "Is the real God" }
+    td { text "Control over Haruhi" }
+  end
+  tr do
+    td { text "Mikuru" }
+    td { text "3-A" }
+    td { text "Classified information" }
+    td { text "Classified information" }
+  end
 end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table toggle-arrow-tiny" id="table5" style="" data-filtering="true" data-sorting="true" data-paging="true" data-show-toggle="true" data-toggle-column="last" data-paging-size="8"><thead><th>Name</th><th>Class</th><th data-breakpoints="all">Info</th><th data-breakpoints="all">Power</th></thead><tr><td>Haruhi</td><td>2-B</td><td>Uninterested in humans</td><td>Reality change</td></tr><tr><td>Kyon</td><td>2-B</td><td>Is the real God</td><td>Control over Haruhi</td></tr><tr><td>Mikuru</td><td>3-A</td><td>Classified information</td><td>Classified information</td></tr></table><ul class="pagination" /></div></div></div><div class="ibox-footer"><p>Supported systems are :data_table and :foo_table</p></div></div>
 		</div>
 
@@ -808,12 +808,12 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can make also tables easily from an array of Hashes</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code41">table_from_hashes [
-	{name: "Haruhi", age: 17},
-	{name: "Mikuru", age: 18},
-	{name: "Kyon", age: 17},
-	{name: "Nagato", age: 17},
-	{name: "Itsuki", age: 17},
-	{name: "Tsuruya", age: 18}
+  {name: "Haruhi", age: 17},
+  {name: "Mikuru", age: 18},
+  {name: "Kyon", age: 17},
+  {name: "Nagato", age: 17},
+  {name: "Itsuki", age: 17},
+  {name: "Tsuruya", age: 18}
 ]</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table" id="table6" style=""><thead><th>name</th><th>age</th></thead><tbody><tr><td>Haruhi</td><td>17</td></tr><tr><td>Mikuru</td><td>18</td></tr><tr><td>Kyon</td><td>17</td></tr><tr><td>Nagato</td><td>17</td></tr><tr><td>Itsuki</td><td>17</td></tr><tr><td>Tsuruya</td><td>18</td></tr></tbody></table><ul class="pagination" /></div></div></div></div>
 		</div>
 
@@ -821,12 +821,12 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 	<div class="row " style="">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 			<div class="ibox float-e-margins"><div class="ibox-title"><h5>You can also use the styles available to tables</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code42">table_from_hashes [
-	{name: "Haruhi", age: 17, class: "2-B"},
-	{name: "Mikuru", age: 18, class: "3-A"},
-	{name: "Kyon", age: 17, class: "2-B"},
-	{name: "Nagato", age: 17, class: "2-A"},
-	{name: "Itsuki", age: 17, class: "2-C"},
-	{name: "Tsuruya", age: 18, class: "3-A"}
+  {name: "Haruhi", age: 17, class: "2-B"},
+  {name: "Mikuru", age: 18, class: "3-A"},
+  {name: "Kyon", age: 17, class: "2-B"},
+  {name: "Nagato", age: 17, class: "2-A"},
+  {name: "Itsuki", age: 17, class: "2-C"},
+  {name: "Tsuruya", age: 18, class: "3-A"}
 ], bordered: true, striped: true</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><table class="table table-bordered table-striped" id="table7" style=""><thead><th>name</th><th>age</th><th>class</th></thead><tbody><tr><td>Haruhi</td><td>17</td><td>2-B</td></tr><tr><td>Mikuru</td><td>18</td><td>3-A</td></tr><tr><td>Kyon</td><td>17</td><td>2-B</td></tr><tr><td>Nagato</td><td>17</td><td>2-A</td></tr><tr><td>Itsuki</td><td>17</td><td>2-C</td></tr><tr><td>Tsuruya</td><td>18</td><td>3-A</td></tr></tbody></table><ul class="pagination" /></div></div></div></div>
 		</div>
 

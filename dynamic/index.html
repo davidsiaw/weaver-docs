@@ -347,6 +347,24 @@ end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style="
 		</div>
 
 	</div>
+	<div class="row " style="">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+			<div class="ibox float-e-margins"><div class="ibox-title"><h5>Modal Dialog</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><textarea id="code20">modal "a_dialog" do
+  header { h4 "Some title header" }
+  body { p "Some long message" }
+  footer do
+    normal_button "Button" do
+      script "$('#a_dialog').modal('hide');"
+    end
+  end
+end
+
+normal_button "Show Modal" do
+  script "$('#a_dialog').modal('show');"
+end</textarea></div><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " style=""><div class="modal fade" id="a_dialog" tabindex="-1" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button><h4>Some title header</h4></div><div class="modal-body"><p>Some long message</p></div><div class="modal-footer"><button type="button" class="btn btn-primary    " id="" onclick="action13(this)">Button</button></div></div></div></div><button type="button" class="btn btn-primary    " id="" onclick="action14(this)">Show Modal</button></div></div></div></div>
+		</div>
+
+	</div>
 
 	            </div>
 			</div>
@@ -1444,6 +1462,21 @@ function action12(caller, data) {
 
 	refresh_table_dyn_table6();
 
+
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code20"), 
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+function action13(caller, data) {
+	$('#a_dialog').modal('hide');
+}
+
+function action14(caller, data) {
+	$('#a_dialog').modal('show');
+}
 
 $(document).ready(function () {
     $('.i-checks').iCheck({
