@@ -23,6 +23,10 @@
 
     <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
 
+    <link href="../js/plugins/skeuocard/styles/skeuocard.css" rel="stylesheet">
+
+    <link href="../js/plugins/skeuocard/styles/skeuocard.reset.css" rel="stylesheet">
+
 
 
 
@@ -67,7 +71,7 @@
 	            <div class="container">
 	<div class="row wrapper border-bottom white-bg page-heading" style="">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h2>Welcome to Weaver 0.8.1</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
+    <h2>Welcome to Weaver 0.8.2</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
   </div>
 
 	</div>
@@ -449,6 +453,24 @@ end</textarea>
   </div>
 
 	</div>
+	<div class="row " style="">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="ibox float-e-margins"><div class="ibox-title"><h5>Credit Card Entry</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row">  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <textarea id="code21">wform do
+  credit_card id: 'ccard'
+  br
+  submit "See contents" do
+    script "alert(JSON.stringify(data));"
+  end
+end</textarea>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <form id="form5" role="form"><div id="ccard" class="credit-card-input no-js"><p class="no-support-warning">Javascript unavailable</p><label for="ccard_type">Card Type</label><select name="ccard_type" id="ccard_type"><option value="visa">Visa</option><option value="discover">Discover</option><option value="mastercard">MasterCard</option><option value="maestro">Maestro</option><option value="jcb">JCB</option><option value="unionpay">UnionPay</option><option value="amex">American Express</option><option value="dinersclubintl">Diners Club</option></select><label for="ccard_number">Card Number</label><input type="text" name="ccard_number" class="number" id="ccard_number" /><label for="ccard_exp_month">Expiration Month</label><input type="text" name="ccard_exp_month" class="exp_month" id="ccard_exp_month" /><label for="ccard_exp_year">Expiration Year</label><input type="text" name="ccard_exp_year" class="exp_year" id="ccard_exp_year" /><label for="ccard_name">Cardholder Name</label><input type="text" name="ccard_name" class="name" id="ccard_name" /><label for="ccard_cvc">Card Validation Code</label><input type="text" name="ccard_cvc" class="cvc" id="ccard_cvc" /></div><br  /><button type="submit" class="btn btn-primary    " id="" onclick="action15(this, get_form5_object()); return false;">See contents</button></form>
+  </div>
+</div></div></div>
+  </div>
+
+	</div>
 
 	            </div>
 			</div>
@@ -481,6 +503,10 @@ end</textarea>
     <script src="../js/plugins/iCheck/icheck.min.js"></script>
 
     <script src="../js/plugins/jsKnob/jquery.knob.js"></script>
+
+    <script src="../js/plugins/skeuocard/javascripts/skeuocard.js"></script>
+
+    <script src="../js/plugins/skeuocard/javascripts/vendor/cssua.min.js"></script>
 
 
 
@@ -1562,6 +1588,30 @@ function action14(caller, data) {
 	$('#a_dialog').modal('show');
 }
 
+		$(document).ready(function()
+		{
+			CodeMirror.fromTextArea(document.getElementById("code21"),
+				JSON.parse('{"mode":"text/x-ruby","lineNumbers":true,"matchBrackets":true,"styleActiveLine":true,"readOnly":true}')
+			);
+	    });
+
+function action15(caller, data) {
+	alert(JSON.stringify(data));
+}
+
+function get_form5_object()
+{
+	var object = {}
+object["ccard_type"] = $('#ccard_type').val();
+object["ccard_number"] = $('#ccard_number').val();
+object["ccard_exp_month"] = $('#ccard_exp_month').val();
+object["ccard_exp_year"] = $('#ccard_exp_year').val();
+object["ccard_name"] = $('#ccard_name').val();
+object["ccard_cvc"] = $('#ccard_cvc').val();
+
+	return object;
+}
+
 $(document).ready(function () {
     $('.i-checks').iCheck({
         checkboxClass: 'icheckbox_square-green',
@@ -1575,6 +1625,15 @@ $(document).ready(function () {
 
 
 $( document ).ready(function() {
+
+var card = new Skeuocard($("#ccard"), {
+  typeInputSelector: '[name="ccard_type"]',
+  numberInputSelector: '[name="ccard_number"]',
+  expMonthInputSelector: '[name="ccard_exp_month"]',
+  expYearInputSelector: '[name="ccard_exp_year"]',
+  nameInputSelector: '[name="ccard_name"]',
+  cvcInputSelector: '[name="ccard_cvc"]'
+});
 
 
 
