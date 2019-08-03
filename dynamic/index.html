@@ -71,7 +71,7 @@
 	            <div class="container">
 	<div class="row wrapper border-bottom white-bg page-heading" style="">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h2>Welcome to Weaver 0.8.9</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
+    <h2>Welcome to Weaver 0.8.10</h2><hr  /><p>The following is a rough documentation of the dynamic features of weaver</p>
   </div>
 
 	</div>
@@ -80,7 +80,7 @@
     <div class="ibox float-e-margins"><div class="ibox-title"><h5>Button action</h5><div class="ibox-tools"></div></div><div class="ibox-content" style="min-height: px"><div class="row">  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <textarea id="code0">normal_button "Click me" do
 	script "alert('hello')"
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <button type="button" class="btn btn-primary    " id="" onclick="action0(this)">Click me</button>
@@ -119,7 +119,7 @@ end</textarea>
  	submit "See form contents" do
 		script "alert(JSON.stringify(data));"
 	end
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <form id="form0" role="form"><div class="form-group " id="textfield0-group"><label>Email</label><div class=" "><input type="text" placeholder="" id="textfield0" name="email" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div></div><div class="form-group " id="textfield1-group"><label>IP Address</label><div class=" "><input type="text" placeholder="" id="textfield1" name="ip" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" data-mask="999.999.999.999" /></div></div><div class="form-group " id="textfield2-group"><label>Password</label><div class=" "><input type="password" placeholder="" id="textfield2" name="pass" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div></div><div class="i-checks"><label ><input type="checkbox" name="haro" id="checkbox0"> Hello</input></label></div><div ><div class="i-checks"><label ><input checked="" type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label ><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label ><input type="radio" value="x5" name="options"> Option 3</input></label></div></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select class="form-control" name="cities" id="select0" placeholder=" "><option>Tokyo</option><option>London</option><option>Paris</option></select></div></div><input id="knob0" type="text" value="0" class="dial" data-fgColor="#1AB394" data-width="85" data-height="85" /><input id="knob1" type="text" value="0" class="dial" data-step="10" data-min="0" data-max="100" data-fgColor="#1AB394" data-width="85" data-height="85" /><div class="form-group"><label class="control-label">Select People</label><div class="input-group" style="width: 100%"><select multiple="true" class="form-control" name="people" id="select1" placeholder=" "><option>Kyon</option><option>Haruhi</option><option>Nagato</option><option>Mikuru</option><option>Tsuruya</option></select></div></div><button type="submit" class="btn btn-primary    " id="submit_button0" onclick="action1(this, get_form0_object()); return false;">See form contents</button></form>
@@ -138,7 +138,7 @@ end</textarea>
   	submit "See form contents" do
 		script "alert(JSON.stringify(data));"
 	end
- end</textarea>
+ end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <form id="form1" role="form"><div class="form-group " id="textfield3-group"><label>Twitter Handle</label><div class="input-group m-b"><span class="input-group-addon">@</span><input type="text" placeholder="google" id="textfield3" name="twitter" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div></div><div class="form-group " id="textfield4-group"><label>Cents</label><div class="input-group m-b"><input type="text" placeholder="125" id="textfield4" name="cents" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /><span class="input-group-addon">¢</span></div></div><div class="form-group " id="textfield5-group"><label>Tracking Number</label><div class="input-group m-b"><span class="input-group-addon">EM</span><input type="text" placeholder="A53GBAW23" id="textfield5" name="tracking_no" rows="" class="form-control" value="" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /><span class="input-group-addon">JP</span></div></div><button type="submit" class="btn btn-primary    " id="submit_button1" onclick="action2(this, get_form1_object()); return false;">See form contents</button></form>
@@ -167,7 +167,7 @@ end</textarea>
  	submit "See form contents" do
 		script "alert(JSON.stringify(data));"
 	end
- end</textarea>
+ end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <form id="form2" role="form"><div class="form-group " id="textfield6-group"><label>Service Name</label><div class=" "><input type="text" placeholder="" id="textfield6" name="service_name" rows="" class="form-control" value="google" style="" autocomplete="on" autocorrect="on" autocapitalize="off" /></div></div><div ><div class="i-checks"><label ><input type="radio" value="x1" name="options"> Option 1</input></label></div><div class="i-checks"><label ><input type="radio" value="x3" name="options"> Option 2</input></label></div><div class="i-checks"><label ><input checked="" type="radio" value="x5" name="options"> Option 3</input></label></div></div><div class="form-group"><label class="control-label">Select City</label><div class="input-group" style="width: 100%"><select value="London" class="form-control" name="cities" id="select2" placeholder=" "><option>Tokyo</option><option selected="true">London</option><option>Paris</option><option>Berlin</option><option>New York</option></select></div></div><button type="submit" class="btn btn-primary    " id="submit_button2" onclick="action3(this, get_form2_object()); return false;">See form contents</button></form>
@@ -207,7 +207,7 @@ end</textarea>
  	submit :user, circle:true do
 		script "alert(JSON.stringify(data));"
 	end
- end</textarea>
+ end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <form id="form3" role="form"><input type="hidden" value="Mewtwo" id="hiddenfield0" name="name" /><button type="submit" class="btn btn-primary    " id="submit_button3" onclick="action4(this, get_form3_object()); return false;">Normal</button><button type="submit" class="btn btn-primary  btn-block  " id="submit_button4" onclick="action5(this, get_form3_object()); return false;">Block version</button><br  /><button type="submit" class="btn btn-primary   btn-outline " id="submit_button5" onclick="action6(this, get_form3_object()); return false;">Outline version</button><br  /><button type="submit" class="btn btn-primary    dim" id="submit_button6" onclick="action7(this, get_form3_object()); return false;">3D version</button><br  /><button type="submit" class="btn btn-primary    dim btn-large-dim" id="submit_button7" onclick="action8(this, get_form3_object()); return false;"><i class="fa fa-ambulance"></i></button><br  /><button type="submit" class="btn btn-primary    btn-rounded" id="submit_button8" onclick="action9(this, get_form3_object()); return false;">Words</button><br  /><button type="submit" class="btn btn-primary    btn-circle" id="submit_button9" onclick="action10(this, get_form3_object()); return false;"><i class="fa fa-user"></i></button></form>
@@ -228,7 +228,7 @@ end</textarea>
  	submit "See form contents" do
 		script "alert(JSON.stringify(data));"
 	end
- end</textarea>
+ end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <form id="form4" role="form"><div data-toggle="buttons"><label class="btn btn-primary btn-block btn-outline"><input type="radio" value="x1" name="options" />Option 1</label><label class="btn btn-primary btn-block btn-outline"><input type="radio" value="x3" name="options" />Option 2</label><label class="btn btn-primary btn-block btn-outline"><input checked="" type="radio" value="x5" name="options" />Option 3</label></div><button type="submit" class="btn btn-primary    " id="submit_button10" onclick="action11(this, get_form4_object()); return false;">See form contents</button></form>
@@ -244,7 +244,7 @@ end</textarea>
   text h.to_json
 end
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data1/">See it in action</a><div class="row">  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-    <textarea id="code7">table_from_source "../examples/data1/"</textarea>
+    <textarea id="code7">table_from_source "../examples/data1/"</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <table class="table" id="dyn_table0" style=""><thead id="dyn_table0_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table0_body"></tbody></table><ul class="pagination" />
@@ -269,7 +269,7 @@ end
   text h.to_json
 end
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row">  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-    <textarea id="code9">table_from_source "../examples/data2/"</textarea>
+    <textarea id="code9">table_from_source "../examples/data2/"</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <table class="table" id="dyn_table1" style=""><thead id="dyn_table1_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table1_body"></tbody></table><ul class="pagination" />
@@ -294,7 +294,7 @@ end
   text h.to_json
 end
 </textarea><a href="http://davidsiaw.github.io/weaver-docs/examples/data2/">See it in action</a><div class="row">  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-    <textarea id="code11">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea>
+    <textarea id="code11">table_from_source "../examples/data2/", columns: ["name", "color"]</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <table class="table" id="dyn_table2" style=""><thead id="dyn_table2_head"><th>Key</th><th>Value</th></thead><tbody id="dyn_table2_body"></tbody></table><ul class="pagination" />
@@ -322,7 +322,7 @@ end
     <textarea id="code13">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age"
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <table class="table" id="dyn_table3" style=""><thead id="dyn_table3_head"><th>Idol Name</th><th>Idol Age</th></thead><tbody id="dyn_table3_body"></tbody></table><ul class="pagination" />
@@ -350,7 +350,7 @@ end
     <textarea id="code15">table_from_source "../examples/data2/" do
 	column "name", title: "Idol Name"
 	column "age", title: "Idol Age", icon: :calendar
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <table class="table" id="dyn_table4" style=""><thead id="dyn_table4_head"><th>Idol Name</th><th><i class="fa fa-calendar"></i> Idol Age</th></thead><tbody id="dyn_table4_body"></tbody></table><ul class="pagination" />
@@ -387,7 +387,7 @@ end
 	column "color", title: "Idol Color", icon: :eye do
 		badge "###color###", style:"background-color:###color###; color:###inv_color###"
 	end
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <table class="table" id="dyn_table5" style=""><thead id="dyn_table5_head"><th>Idol Name</th><th><i class="fa fa-calendar"></i> Idol Age</th><th><i class="fa fa-eye"></i> Idol Color</th></thead><tbody id="dyn_table5_body"></tbody></table><ul class="pagination" />
@@ -420,7 +420,7 @@ end
 			script "alert(JSON.stringify(data))"
 		end
 	end
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <table class="table" id="dyn_table6" style=""><thead id="dyn_table6_head"><th>Idol Name</th><th><i class="fa fa-calendar"></i> Idol Age</th><th>Button</th></thead><tbody id="dyn_table6_body"></tbody></table><ul class="pagination" />
@@ -444,7 +444,7 @@ end
 
 normal_button "Show Modal" do
   script "$('#a_dialog').modal('show');"
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <div class="modal fade" id="a_dialog" tabindex="-1" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button><h4>Some title header</h4></div><div class="modal-body"><p>Some long message</p></div><div class="modal-footer"><button type="button" class="btn btn-primary    " id="" onclick="action13(this)">Button</button></div></div></div></div><button type="button" class="btn btn-primary    " id="" onclick="action14(this)">Show Modal</button>
@@ -462,7 +462,7 @@ end</textarea>
   submit "See contents" do
     script "alert(JSON.stringify(data));"
   end
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <form id="form5" role="form"><div id="ccard" class="credit-card-input no-js"><p class="no-support-warning">Javascript unavailable</p><label for="ccard_type">Card Type</label><select name="ccard_type" id="ccard_type"><option value="visa">Visa</option><option value="discover">Discover</option><option value="mastercard">MasterCard</option><option value="maestro">Maestro</option><option value="jcb">JCB</option><option value="unionpay">UnionPay</option><option value="amex">American Express</option><option value="dinersclubintl">Diners Club</option></select><label for="ccard_number">Card Number</label><input type="text" name="ccard_number" class="number" id="ccard_number" /><label for="ccard_exp_month">Expiration Month</label><input type="text" name="ccard_exp_month" class="exp_month" id="ccard_exp_month" /><label for="ccard_exp_year">Expiration Year</label><input type="text" name="ccard_exp_year" class="exp_year" id="ccard_exp_year" /><label for="ccard_name">Cardholder Name</label><input type="text" name="ccard_name" class="name" id="ccard_name" /><label for="ccard_cvc">Card Validation Code</label><input type="text" name="ccard_cvc" class="cvc" id="ccard_cvc" /></div><br  /><button type="submit" class="btn btn-primary    " id="submit_button11" onclick="action15(this, get_form5_object()); return false;">See contents</button></form>
@@ -483,7 +483,7 @@ end</textarea>
   submit "See contents" do
     script "alert(JSON.stringify(data));"
   end
-end</textarea>
+end</textarea><br  />
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
     <form id="form6" role="form"><style>#credit_card0.skeuocard.product-visa.issuer-411111 .face.front {
@@ -1683,6 +1683,29 @@ var card = new Skeuocard($("#ccard"), {
   cvcInputSelector: '[name="ccard_cvc"]'
 });
 
+var ccard_content_width = $('#ccard').width();
+var ccard_content_height = $('#ccard').height();
+function resize_ccard() {
+  var availableWidth = $('#ccard').parent().width();
+  var contentWidth = ccard_content_width;
+  var contentHeight = ccard_content_height;
+
+  var scale = Math.min(availableWidth, contentWidth) / contentWidth;
+  $("#ccard").css("transform","scale(" + scale + ")");
+  $("#ccard").css("transform-origin","top left");
+  $("#ccard").css("width", contentWidth * scale);
+  $("#ccard").css("height", contentHeight * scale);
+}
+
+var resize_ccard_id;
+$(window).resize( function() {
+  clearTimeout(resize_ccard_id);
+  resize_ccard_id = setTimeout(resize_ccard, 500);
+});
+
+resize_ccard();
+
+
 
 var product = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
 // register a new variation of the visa cards
@@ -1700,6 +1723,29 @@ var card = new Skeuocard($("#credit_card0"), {
   nameInputSelector: '[name="credit_card0_name"]',
   cvcInputSelector: '[name="credit_card0_cvc"]'
 });
+
+var credit_card0_content_width = $('#credit_card0').width();
+var credit_card0_content_height = $('#credit_card0').height();
+function resize_credit_card0() {
+  var availableWidth = $('#credit_card0').parent().width();
+  var contentWidth = credit_card0_content_width;
+  var contentHeight = credit_card0_content_height;
+
+  var scale = Math.min(availableWidth, contentWidth) / contentWidth;
+  $("#credit_card0").css("transform","scale(" + scale + ")");
+  $("#credit_card0").css("transform-origin","top left");
+  $("#credit_card0").css("width", contentWidth * scale);
+  $("#credit_card0").css("height", contentHeight * scale);
+}
+
+var resize_credit_card0_id;
+$(window).resize( function() {
+  clearTimeout(resize_credit_card0_id);
+  resize_credit_card0_id = setTimeout(resize_credit_card0, 500);
+});
+
+resize_credit_card0();
+
 
 
 
